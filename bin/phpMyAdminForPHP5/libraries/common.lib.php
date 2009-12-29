@@ -3,7 +3,7 @@
 /**
  * Misc functions used all over the scripts.
  *
- * @version $Id: common.lib.php 12608 2009-06-30 10:48:08Z lem9 $
+ * @version $Id: common.lib.php 13118 2009-11-21 13:22:08Z lem9 $
  * @package phpMyAdmin
  */
 
@@ -24,10 +24,6 @@ function PMA_pow($base, $exp, $use_function = false)
 {
     static $pow_function = null;
 
-    if ($exp < 0) {
-        return false;
-    }
-
     if (null == $pow_function) {
         if (function_exists('bcpow')) {
             // BCMath Arbitrary Precision Mathematics Function
@@ -43,6 +39,9 @@ function PMA_pow($base, $exp, $use_function = false)
 
     if (! $use_function) {
         $use_function = $pow_function;
+    }
+    if ($exp < 0 && 'pow' != $use_function) {
+        return false;
     }
 
     switch ($use_function) {
@@ -305,7 +304,7 @@ function PMA_formatSql($parsed_sql, $unparsed_sql = '')
     // well, not quite
     // first check for the SQL parser having hit an error
     if (PMA_SQP_isError()) {
-        return htmlspecialchars($parsed_sql['raw']);
+        return htmlspecialchars($parsed_sql['raw']); 
     }
     // then check for an array
     if (!is_array($parsed_sql)) {
@@ -1449,8 +1448,9 @@ function PMA_formatNumber($value, $length = 3, $comma = 0, $only_down = false)
         } // end for
     } elseif (!$only_down && (float) $value !== 0.0) {
         for ($d = -8; $d <= 8; $d++) {
-            if (isset($units[$d]) && $value <= $li * PMA_pow(1000, $d-1)) {
-                $value = round($value / (PMA_pow(1000, $d) / $dh)) /$dh;
+            // force using pow() because of the negative exponent
+            if (isset($units[$d]) && $value <= $li * PMA_pow(1000, $d-1, 'pow')) {
+                $value = round($value / (PMA_pow(1000, $d, 'pow') / $dh)) /$dh;
                 $unit = $units[$d];
                 break 1;
             } // end if
@@ -1899,6 +1899,7 @@ function PMA_checkParameters($params, $die = true, $request = true)
  * @uses    PMA_DBI_field_flags()
  * @uses    PMA_backquote()
  * @uses    PMA_sqlAddslashes()
+ * @uses    PMA_printable_bit_value()
  * @uses    stristr()
  * @uses    bin2hex()
  * @uses    preg_replace()
@@ -1910,7 +1911,7 @@ function PMA_checkParameters($params, $die = true, $request = true)
  *
  * @access  public
  * @author  Michal Cihar (michal@cihar.com) and others...
- * @return  string      calculated condition
+ * @return  array      the calculated condition and whether condition is unique
  */
 function PMA_getUniqueCondition($handle, $fields_cnt, $fields_meta, $row, $force_unique=false)
 {
@@ -1990,6 +1991,8 @@ function PMA_getUniqueCondition($handle, $fields_cnt, $fields_meta, $row, $force
                         // this blob won't be part of the final condition
                         $condition = '';
                     }
+            } elseif ($meta->type == 'bit') {
+                $condition .= "= b'" . PMA_printable_bit_value($row[$i], $meta->length) . "' AND";
             } else {
                 $condition .= '= \''
                     . PMA_sqlAddslashes($row[$i], false, true) . '\' AND';
@@ -2006,15 +2009,19 @@ function PMA_getUniqueCondition($handle, $fields_cnt, $fields_meta, $row, $force
     // Correction University of Virginia 19991216:
     // prefer primary or unique keys for condition,
     // but use conjunction of all values if no primary key
+    $clause_is_unique = true;
     if ($primary_key) {
         $preferred_condition = $primary_key;
     } elseif ($unique_key) {
         $preferred_condition = $unique_key;
     } elseif (! $force_unique) {
         $preferred_condition = $nonprimary_condition;
+        $clause_is_unique = false;
     }
 
-    return trim(preg_replace('|\s?AND$|', '', $preferred_condition));
+    $where_clause = trim(preg_replace('|\s?AND$|', '', $preferred_condition));
+    return(array($where_clause, $clause_is_unique));
+
 } // end function
 
 /**
@@ -2419,7 +2426,7 @@ window.addEvent('domready', function(){
 
     var anchor<?php echo $id; ?> = new Element('a', {
         'id': 'toggle_<?php echo $id; ?>',
-        'href': '#',
+        'href': 'javascript:void(0)',
         'events': {
             'click': function(){
                 mySlide<?php echo $id; ?>.toggle();
@@ -2544,6 +2551,18 @@ function PMA_printable_bit_value($value, $length) {
     }
     $printable = substr($printable, -$length);
     return $printable;
+}
+
+/**
+ * Converts a BIT type default value  
+ * for example, b'010' becomes 010 
+ *
+ * @uses    strtr()
+ * @param   string $bit_default_value
+ * @return  string the converted value
+ */
+function PMA_convert_bit_default_value($bit_default_value) {
+    return strtr($bit_default_value, array("b" => "", "'" => ""));
 }
 
 /**

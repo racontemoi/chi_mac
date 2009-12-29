@@ -16,7 +16,7 @@
  *
  * All directives are explained in Documentation.html
  *
- * @version $Id: config.default.php 12336 2009-04-08 11:47:25Z lem9 $
+ * @version $Id: config.default.php 13102 2009-11-03 13:10:44Z lem9 $
  * @package phpMyAdmin
  */
 
@@ -253,7 +253,7 @@ $cfg['Servers'][$i]['verbose'] = '';
  * Database used for Relation, Bookmark and PDF Features
  * (see scripts/create_tables.sql)
  *   - leave blank for no support
- *     DEFAULT: 'phpmyadmin'
+ *     SUGGESTED: 'phpmyadmin'
  *
  * @global string $cfg['Servers'][$i]['pmadb']
  */
@@ -262,7 +262,7 @@ $cfg['Servers'][$i]['pmadb'] = '';
 /**
  * Bookmark table
  *   - leave blank for no bookmark support
- *     DEFAULT: 'pma_bookmark'
+ *     SUGGESTED: 'pma_bookmark'
  *
  * @global string $cfg['Servers'][$i]['bookmarktable']
  */
@@ -271,7 +271,7 @@ $cfg['Servers'][$i]['bookmarktable'] = '';
 /**
  * table to describe the relation between links (see doc)
  *   - leave blank for no relation-links support
- *     DEFAULT: 'pma_relation'
+ *     SUGGESTED: 'pma_relation'
  *
  * @global string $cfg['Servers'][$i]['relation']
  */
@@ -280,7 +280,7 @@ $cfg['Servers'][$i]['relation'] = '';
 /**
  * table to describe the display fields
  *   - leave blank for no display fields support
- *     DEFAULT: 'pma_table_info'
+ *     SUGGESTED: 'pma_table_info'
  *
  * @global string $cfg['Servers'][$i]['table_info']
  */
@@ -289,7 +289,7 @@ $cfg['Servers'][$i]['table_info'] = '';
 /**
  * table to describe the tables position for the PDF schema
  *   - leave blank for no PDF schema support
- *     DEFAULT: 'pma_table_coords'
+ *     SUGGESTED: 'pma_table_coords'
  *
  * @global string $cfg['Servers'][$i]['table_coords']
  */
@@ -298,7 +298,7 @@ $cfg['Servers'][$i]['table_coords'] = '';
 /**
  * table to describe pages of relationpdf
  *   - leave blank if you don't want to use this
- *     DEFAULT: 'pma_pdf_pages'
+ *     SUGGESTED: 'pma_pdf_pages'
  *
  * @global string $cfg['Servers'][$i]['pdf_pages']
  */
@@ -307,7 +307,7 @@ $cfg['Servers'][$i]['pdf_pages'] = '';
 /**
  * table to store column information
  *   - leave blank for no column comments/mime types
- *     DEFAULT: 'pma_column_info'
+ *     SUGGESTED: 'pma_column_info'
  *
  * @global string $cfg['Servers'][$i]['column_info']
  */
@@ -316,7 +316,7 @@ $cfg['Servers'][$i]['column_info'] = '';
 /**
  * table to store SQL history
  *   - leave blank for no SQL query history
- *     DEFAULT: 'pma_history'
+ *     SUGGESTED: 'pma_history'
  *
  * @global string $cfg['Servers'][$i]['history']
  */
@@ -325,7 +325,7 @@ $cfg['Servers'][$i]['history'] = '';
 /**
  * table to store the coordinates for Designer
  *   - leave blank for no Designer feature
- *     DEFAULT: 'pma_designer_coords'
+ *     SUGGESTED: 'pma_designer_coords'
  *
  * @global string $cfg['Servers'][$i]['designer_coords']
  */
@@ -361,6 +361,13 @@ $cfg['Servers'][$i]['AllowNoPassword'] = false;
 $cfg['Servers'][$i]['AllowDeny']['order'] = '';
 
 /**
+ * Host authentication rules, leave blank for defaults
+ *
+ * @global array $cfg['Servers'][$i]['AllowDeny']['rules']
+ */
+$cfg['Servers'][$i]['AllowDeny']['rules'] = array();
+
+/**
  * Disable use of INFORMATION_SCHEMA
  *
  * @see http://sf.net/support/tracker.php?aid=1849494
@@ -368,13 +375,6 @@ $cfg['Servers'][$i]['AllowDeny']['order'] = '';
  * @global boolean $cfg['Servers'][$i]['DisableIS']
  */
 $cfg['Servers'][$i]['DisableIS'] = true;
-
-/**
- * Host authentication rules, leave blank for defaults
- *
- * @global array $cfg['Servers'][$i]['AllowDeny']['rules']
- */
-$cfg['Servers'][$i]['AllowDeny']['rules'] = array();
 
 /**
  * SQL command to fetch available databases
@@ -1018,7 +1018,7 @@ $cfg['Export']['compression'] = 'none';
  *
  * @global boolean $cfg['Export']['asfile']
  */
-$cfg['Export']['asfile'] = false;
+$cfg['Export']['asfile'] = true;
 
 /**
  *

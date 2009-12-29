@@ -1,5 +1,5 @@
 <?php
-/* $Id: spanish-utf-8.inc.php 12494 2009-05-25 08:11:32Z helmo $ */
+/* $Id: spanish-utf-8.inc.php 13109 2009-11-08 12:04:19Z lem9 $ */
 
 $charset = 'utf-8';
 $text_dir = 'ltr';
@@ -1208,7 +1208,6 @@ $strSetupServers_port_desc = 'El puerto al cual ha sido asociado el servidor MyS
 $strSetupServers_socket_name = 'Puerto del servidor';
 $strSetupServers_socket_desc = 'El puerto escuchado por el servidor MySQL, deje vacío para usar los valores predeterminados';
 $strSetupServers_ssl_name = 'Use SSL';
-$strSetupServers_ssl_desc = '';
 $strSetupServers_connect_type_name = 'Tipo de conexión';
 $strSetupServers_connect_type_desc = 'Cómo conectar con el servidor, mantenga el tcp en caso de no estar seguro';
 $strSetupServers_extension_name = 'extensión PHP para usar';
@@ -1254,17 +1253,17 @@ $strSetupServers_bookmarktable_desc = 'Deje en blanco para no dar soporte [a@htt
 $strSetupServers_relation_name = 'Tabla de relaciones';
 $strSetupServers_relation_desc = 'Deje en blanco para no dar soporte [a@http://wiki.cihar.com/pma/relation]relation-links[/a], de manera predeterminada: [kbd]pma_relation[/kbd]';
 $strSetupServers_table_info_name = 'Mostrar la tabla con los campos';
-$strSetupServers_table_info_desc = 'Table to describe the display fields, leave blank for no support; default: [kbd]pma_table_info[/kbd]';  //to translate
+$strSetupServers_table_info_desc = 'Table to describe the display fields, leave blank for no support; suggested: [kbd]pma_table_info[/kbd]';  //to translate
 $strSetupServers_table_coords_name = 'PDF schema: table coordinates';  //to translate
-$strSetupServers_table_coords_desc = 'Leave blank for no PDF schema support, default: [kbd]pma_table_coords[/kbd]';  //to translate
+$strSetupServers_table_coords_desc = 'Leave blank for no PDF schema support, suggested: [kbd]pma_table_coords[/kbd]';  //to translate
 $strSetupServers_pdf_pages_name = 'PDF schema: pages table';  //to translate
-$strSetupServers_pdf_pages_desc = 'Leave blank for no PDF schema support, default: [kbd]pma_pdf_pages[/kbd]';  //to translate
+$strSetupServers_pdf_pages_desc = 'Leave blank for no PDF schema support, suggested: [kbd]pma_pdf_pages[/kbd]';  //to translate
 $strSetupServers_column_info_name = 'Tabla con información de la columna';
-$strSetupServers_column_info_desc = 'Leave blank for no column comments/mime types, default: [kbd]pma_column_info[/kbd]';  //to translate
+$strSetupServers_column_info_desc = 'Leave blank for no column comments/mime types, suggested: [kbd]pma_column_info[/kbd]';  //to translate
 $strSetupServers_history_name = 'SQL query history table';  //to translate
-$strSetupServers_history_desc = 'Leave blank for no SQL query history support, default: [kbd]pma_history[/kbd]';  //to translate
+$strSetupServers_history_desc = 'Leave blank for no SQL query history support, suggested: [kbd]pma_history[/kbd]';  //to translate
 $strSetupServers_designer_coords_name = 'Tabla del diseñador';
-$strSetupServers_designer_coords_desc = 'Leave blank for no Designer support, default: [kbd]designer_coords[/kbd]';  //to translate
+$strSetupServers_designer_coords_desc = 'Leave blank for no Designer support, suggested: [kbd]pma_designer_coords[/kbd]';  //to translate
 $strSetupUploadDir_name = 'Directorio desde donde se cargarán los archivos';
 $strSetupUploadDir_desc = 'Directorio en el servidor donde puede subir archivos para importar';
 $strSetupSaveDir_name = 'Directorio de almacenamiento';
@@ -1458,4 +1457,5 @@ $strReplicationStatus = 'Replication status';  //to translate
 $strReplicationStatusInfo = 'This MySQL server works as %s in <b>replication</b> process. For further information about replication status on the server, please visit the <a href="#replication">replication section</a>.';  //to translate
 $strReplicationStatus_master = 'Master status';  //to translate
 $strReplicationStatus_slave = 'Slave status';  //to translate
+$strSetupServers_ssl_desc = 'Enable SSL for connection to MySQL server';  //to translate
 ?>

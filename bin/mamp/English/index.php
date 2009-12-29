@@ -48,7 +48,7 @@
 							</tr>
 						</table>
 						<h3>Example:</h3>
-						<pre>$link = mysql_connect('localhost, 'root', 'root');</pre>
+						<pre>$link = mysql_connect('localhost', 'root', 'root');</pre>
 						<p>or you can connect using an UNIX Socket:</p>
 						<table class="mysql">
 							<tr>

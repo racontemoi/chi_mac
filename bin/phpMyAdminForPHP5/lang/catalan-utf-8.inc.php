@@ -1,5 +1,5 @@
 <?php
-/* $Id: catalan-utf-8.inc.php 12503 2009-05-27 16:35:25Z lem9 $ */
+/* $Id: catalan-utf-8.inc.php 13109 2009-11-08 12:04:19Z lem9 $ */
 
 $charset = 'utf-8';
 $allow_recoding = TRUE;
@@ -1036,7 +1036,7 @@ $strSetupServers_controluser_desc = 'Usuari MySQL especial configurat amb permis
 $strSetupServers_controluser_name = 'Usuari de control';
 $strSetupServers_CountTables_desc = 'Comptar les taules al mostrar la llista de bases de dades';
 $strSetupServers_CountTables_name = 'Comptar les taules';
-$strSetupServers_designer_coords_desc = 'Deixa en blanc per desactivar el suport del Dissenyador, predeterminat: [kbd]designer_coords[/kbd]';
+$strSetupServers_designer_coords_desc = 'Deixa en blanc per desactivar el suport del Dissenyador, predeterminat: [kbd]pma_designer_coords[/kbd]';
 $strSetupServers_designer_coords_name = 'Taula del Dissenyador';
 $strSetupServers_DisableIS_desc = 'Més informació a [a@http://sf.net/support/tracker.php?aid=1849494]PMA bug tracker[/a] i [a@http://bugs.mysql.com/19588]MySQL Bugs[/a]';
 $strSetupServers_DisableIS_name = 'Desactiva l\'ús d\'INFORMATION_SCHEMA';
@@ -1073,7 +1073,6 @@ $strSetupServers_SignonURL_name = 'URL signon';
 $strSetupServerSslMsg = 'Hauries de fer servir connexions SSL si el teu servidor web ho permet';
 $strSetupServers_socket_desc = 'Sócol ón el servidor MySQL està escoltant, deixa en blanc per al predeterminat';
 $strSetupServers_socket_name = 'Sócol del servidor';
-$strSetupServers_ssl_desc = '';
 $strSetupServers_ssl_name = 'Usa SSL';
 $strSetupServers_table_coords_desc = 'Deixa en blanc per desactivar el suport d\'esquemes PDF, predeterminat: [kbd]pma_table_coords[/kbd]';
 $strSetupServers_table_coords_name = 'Esquema PDF: taula de coordinades';
@@ -1455,4 +1454,5 @@ $strYes = 'Si';
 $strZeroRemovesTheLimit = 'Nota: Es treu el limit establint aquestes opcions a 0 (zero).';
 $strZip = '"comprimit amb zip"';
 
+$strSetupServers_ssl_desc = 'Enable SSL for connection to MySQL server';  //to translate
 ?>

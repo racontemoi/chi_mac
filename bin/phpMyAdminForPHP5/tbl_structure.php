@@ -3,7 +3,7 @@
 /**
  * Displays table structure infos like fields/columns, indexes, size, rows
  * and allows manipulation of indexes and columns/fields
- * @version $Id: tbl_structure.php 12284 2009-03-03 16:41:41Z nijel $
+ * @version $Id: tbl_structure.php 12700 2009-07-22 21:13:11Z lem9 $
  * @package phpMyAdmin
  */
 
@@ -337,7 +337,8 @@ while ($row = PMA_DBI_fetch_assoc($fields_rs)) {
     <td nowrap="nowrap"><?php
     if (isset($row['Default'])) {
         if ($extracted_fieldspec['type'] == 'bit') {
-            echo PMA_printable_bit_value($row['Default'], $extracted_fieldspec['spec_in_brackets']);
+            // here, $row['Default'] contains something like b'010'
+            echo PMA_convert_bit_default_value($row['Default']);
         } else {
             echo $row['Default'];
         }
@@ -608,7 +609,8 @@ if ($cfg['ShowStats']) {
     if ($mergetable == false) {
         list($index_size, $index_unit)   = PMA_formatByteDown($showtable['Index_length'], $max_digits, $decimals);
     }
-    if (isset($showtable['Data_free']) && $showtable['Data_free'] > 0) {
+    // InnoDB returns a huge value in Data_free, do not use it
+    if (! $is_innodb && isset($showtable['Data_free']) && $showtable['Data_free'] > 0) {
         list($free_size, $free_unit)     = PMA_formatByteDown($showtable['Data_free'], $max_digits, $decimals);
         list($effect_size, $effect_unit) = PMA_formatByteDown($showtable['Data_length'] + $showtable['Index_length'] - $showtable['Data_free'], $max_digits, $decimals);
     } else {

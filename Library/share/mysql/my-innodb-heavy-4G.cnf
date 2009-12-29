@@ -30,7 +30,7 @@
 #
 [client]
 #password	= [your_password]
-port		= 9999
+port		= 3306
 socket		= /Applications/MAMP/tmp/mysql/mysql.sock
 
 # *** Application-specific options follow here ***
@@ -41,7 +41,7 @@ socket		= /Applications/MAMP/tmp/mysql/mysql.sock
 [mysqld]
 
 # generic configuration options
-port		= 9999
+port		= 3306
 socket		= /Applications/MAMP/tmp/mysql/mysql.sock
 
 # back_log is the number of connections the operating system can keep in

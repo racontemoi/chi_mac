@@ -50,7 +50,7 @@
 							</tr>
 						</table>
 						<h3>Пример:</h3>
-						<pre>$link = mysql_connect('localhost, 'root', 'root');</pre>
+						<pre>$link = mysql_connect('localhost', 'root', 'root');</pre>
 						<p>Альтернативано можно создать соединение посредством UNIX Socket:</p>
 						<table class="mysql">
 							<tr>

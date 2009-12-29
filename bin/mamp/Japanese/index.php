@@ -48,7 +48,7 @@
 							</tr>
 						</table>
 						<h3>例:</h3>
-						<pre>$link = mysql_connect('localhost, 'root', 'root');</pre>
+						<pre>$link = mysql_connect('localhost', 'root', 'root');</pre>
 						<p>また、UNIXソケットを使用するには、以下の設定を使用してください。</p>
 						<table class="mysql">
 							<tr>

@@ -1,143 +1,143 @@
-[Sep 04 19:05:57] Starting installation of Zend Optimizer ...
-[Sep 04 19:05:58] Executing: uname -s 2>/dev/null
-[Sep 04 19:05:58] Command has returned exit status: 0
-[Sep 04 19:05:58] Executing: uname -p 2>/dev/null
-[Sep 04 19:05:58] Command has returned exit status: 0
-[Sep 04 19:05:58] Executing: uname -r 2>/dev/null
-[Sep 04 19:05:58] Command has returned exit status: 0
-[Sep 04 19:05:58] Executing: uname -n 2>/dev/null
-[Sep 04 19:05:58] Command has returned exit status: 0
-[Sep 04 19:05:58] System: Darwin 8.11.0 powerpc
-[Sep 04 19:05:58] Hostname: allumette.fritz.box
-[Sep 04 19:05:58] Setting TEMP=/tmp/zend_install.23384
-[Sep 04 19:05:58] Creating directory: /tmp/zend_install.23384
-[Sep 04 19:05:58] MSGBOX: "Welcome to the Zend Optimizer 3.3.3 Installation! For more information regarding this procedure, please see the Zend Optimizer Installation Guide. "
-[Sep 04 19:05:58] ./dialog --clear --backtitle 'Zend Optimizer Installation' --title 'Zend Optimizer 3.3.3' --msgbox ' Welcome to the Zend Optimizer 3.3.3 Installation! For more information regarding this procedure, please see the Zend Optimizer Installation Guide. ' 0 0
-[Sep 04 19:05:59] Showing license: ..//LICENSE
-[Sep 04 19:05:59] Wrapping text from file: ..//LICENSE
-[Sep 04 19:05:59] Open file: /tmp/zend_install.23384/LICENSE.wrapped for writing
-[Sep 04 19:05:59] ./dialog --clear --backtitle 'Zend Optimizer Installation' --title 'Zend Optimizer 3.3.3' --textbox '/tmp/zend_install.23384/LICENSE.wrapped' 0 0
-[Sep 04 19:06:00] YESNO: IMPORTANT: BY SELECTING THE 'YES' OPTION BELOW, DOWNLOADING, INSTALLING, OR OTHERWISE USING THIS SOFTWARE, YOU ACKNOWLEDGE THAT YOU HAVE READ THE LICENSE AGREEMENT, AND THAT YOU AGREE TO BE BOUND BY ITS TERMS AND CONDITIONS. IF YOU DO NOT AGREE TO ALL OF THE TERMS AND CONDITIONS OF SUCH AGREEMENT, YOU ARE NOT AN AUTHORIZED USER OF THE SOFTWARE AND IT IS YOUR RESPONSIBILITY TO EXIT THIS DOWNLOADING/INSTALLATION PROCESS WITHOUT DOWNLOADING OR INSTALLING THE SOFTWARE BY SELECTING THE 'NO' OPTION BELOW, AND TO DELETE THE SOFTWARE FROM YOUR COMPUTER. Do you accept the terms of this license?
-[Sep 04 19:06:00] ./dialog --clear --backtitle 'Zend Optimizer Installation' --title 'Zend Optimizer 3.3.3' --yesno ' IMPORTANT: BY SELECTING THE '\''YES'\'' OPTION BELOW, DOWNLOADING, INSTALLING, OR OTHERWISE USING THIS SOFTWARE, YOU ACKNOWLEDGE THAT YOU HAVE READ THE LICENSE AGREEMENT, AND THAT YOU AGREE TO BE BOUND BY ITS TERMS AND CONDITIONS. IF YOU DO NOT AGREE TO ALL OF THE TERMS AND CONDITIONS OF SUCH AGREEMENT, YOU ARE NOT AN AUTHORIZED USER OF THE SOFTWARE AND IT IS YOUR RESPONSIBILITY TO EXIT THIS DOWNLOADING/INSTALLATION PROCESS WITHOUT DOWNLOADING OR INSTALLING THE SOFTWARE BY SELECTING THE '\''NO'\'' OPTION BELOW, AND TO DELETE THE SOFTWARE FROM YOUR COMPUTER. Do you accept the terms of this license? ' 0 0
-[Sep 04 19:06:01] User choose: YES
-[Sep 04 19:06:01] Choosing install prefix ...
-[Sep 04 19:06:01] ASK: Please specify the location for installing Zend Optimizer: 
-[Sep 04 19:06:01] ./dialog --clear --backtitle 'Zend Optimizer Installation' --title 'Zend Optimizer 3.3.3' --inputbox ' Please specify the location for installing Zend Optimizer: ' 0 0 '/usr/local/Zend'
-[Sep 04 19:06:17] INPUTBOX: /Applications/MAMP/bin/php4/zend
-[Sep 04 19:06:17] Trying to guess PHP.ini location ...
-[Sep 04 19:06:17] ASK: Enter the location of your php.ini file
-[Sep 04 19:06:17] ./dialog --clear --backtitle 'Zend Optimizer Installation' --title 'Zend Optimizer 3.3.3' --inputbox ' Enter the location of your php.ini file ' 0 0 ' '
-[Sep 04 19:06:27] INPUTBOX: /Applications/MAMP/conf/php4 
-[Sep 04 19:06:28] Confirmed the location of php.ini at: /Applications/MAMP/conf/php4
-[Sep 04 19:06:28] Reading PHP.ini: /Applications/MAMP/conf/php4/php.ini
-[Sep 04 19:06:28] Creating directory: /tmp/zend_install.23384/saved
-[Sep 04 19:06:28] Open file: /tmp/zend_install.23384/saved/_Applications_MAMP_conf_php4_php.ini for writing
-[Sep 04 19:06:28] YESNO: Are you using Apache Web server?
-[Sep 04 19:06:28] ./dialog --clear --backtitle 'Zend Optimizer Installation' --title 'Zend Optimizer 3.3.3' --yesno ' Are you using Apache Web server? ' 0 0
-[Sep 04 19:06:29] User choose: YES
-[Sep 04 19:06:29] Trying to guess Apache executable file ...
-[Sep 04 19:06:29] ASK: Specify the full path to the Apache control utility (apachectl)
-[Sep 04 19:06:29] ./dialog --clear --backtitle 'Zend Optimizer Installation' --title 'Zend Optimizer 3.3.3' --inputbox ' Specify the full path to the Apache control utility (apachectl) ' 0 0 '/usr/sbin/apachectl'
-[Sep 04 19:06:49] INPUTBOX: /Applications/MAMP/Library/bin/apachectl
-[Sep 04 19:06:49] Executing: /usr/bin/file -bi /Applications/MAMP/Library/bin/apachectl 2>/dev/null
-[Sep 04 19:06:49] Command has returned exit status: 0
-[Sep 04 19:06:49] Found apachectl: /Applications/MAMP/Library/bin/apachectl
-[Sep 04 19:06:49] Found httpd: /Applications/MAMP/Library/bin/httpd
-[Sep 04 19:06:49] Executing: /Applications/MAMP/Library/bin/httpd -V 2>/dev/null
-[Sep 04 19:06:50] Command has returned exit status: 0
-[Sep 04 19:06:50] Guessed from Apache executable: HTTPD_ROOT=/Applications/MAMP/Library
-[Sep 04 19:06:50] Guessed from Apache executable: APACHE_VERSION=2
-[Sep 04 19:06:50] Guessed from Apache executable: ERROR_LOG=/Applications/MAMP/Library/logs/error_log
-[Sep 04 19:06:50] Guessed from Apache executable: APACHE_CONFIG=/Applications/MAMP/conf/apache/httpd.conf
-[Sep 04 19:06:50] Guessed from Apache executable: DEFAULT_PIDLOG=/Applications/MAMP/Library/logs/httpd.pid
-[Sep 04 19:06:50] Executing: /Applications/MAMP/Library/bin/httpd -l 2>/dev/null
-[Sep 04 19:06:50] Command has returned exit status: 0
-[Sep 04 19:06:50] Executing: /Applications/MAMP/Library/bin/httpd -V 2>/dev/null
-[Sep 04 19:06:50] Command has returned exit status: 0
-[Sep 04 19:06:50] Executing: /Applications/MAMP/Library/bin/httpd -l 2>/dev/null
-[Sep 04 19:06:50] Command has returned exit status: 0
-[Sep 04 19:06:50] Removed 4.2.0 from array of PHP versions
-[Sep 04 19:06:50] Removed 4.2.x from array of PHP versions
-[Sep 04 19:06:50] Removed 4.3.x from array of PHP versions
-[Sep 04 19:06:50] Added 4.3.x (PHP 4.3.x) from version 2 to the array of PHP versions
-[Sep 04 19:06:50] Detecting PHP version ...
-[Sep 04 19:06:50] Opening Apache configuration file.
-[Sep 04 19:06:50] Found "Include" directive in /Applications/MAMP/conf/apache/httpd.conf: /Applications/MAMP/conf/apache/ssl.conf
-[Sep 04 19:06:50] Guessed from Apache httpd.conf: USER=www
-[Sep 04 19:06:50] Guessed from Apache httpd.conf: PORT=8888
-[Sep 04 19:06:50] Guessed from Apache httpd.conf: GROUP=#-1
-[Sep 04 19:06:50] Guessed from Apache httpd.conf: MaxClients=150
-[Sep 04 19:06:50] Guessed from Apache httpd.conf: PidFile=/Applications/MAMP/Library/logs/httpd.pid
-[Sep 04 19:06:50] Guessed from Apache httpd.conf: DOCUMENT_ROOT=/Applications/MAMP/htdocs
-[Sep 04 19:06:50] Guessed from Apache httpd.conf: GLOBAL_DOCUMENT_ROOT=/Applications/MAMP/htdocs
-[Sep 04 19:06:50] Guessed from Apache httpd.conf: APACHE_LIBEXEC=/Applications/MAMP/Library/modules
-[Sep 04 19:06:50] Guessed from Apache httpd.conf: PHP_PATH=/Applications/MAMP/Library/modules/libphp5.so
-[Sep 04 19:06:50] Guessed from Apache httpd.conf: PHP_TYPE=module
-[Sep 04 19:06:50] Executing: /usr/bin/strings /Applications/MAMP/Library/modules/libphp5.so
-[Sep 04 19:06:51] Command has returned exit status: 0
-[Sep 04 19:06:53] Detected PHP version: 5.2.x
-[Sep 04 19:06:53] Gathering components info ...
-[Sep 04 19:06:53] Unlinking: /Applications/MAMP/bin/php4/zend/doc
-[Sep 04 19:06:53] Executing: "mkdir -p '/Applications/MAMP/bin/php4/zend/doc'" (status: 0)
-[Sep 04 19:06:53] Copying: ../data/doc/Zend_Optimizer_User_Guide.pdf to: /Applications/MAMP/bin/php4/zend/doc/Zend_Optimizer_User_Guide.pdf
-[Sep 04 19:06:53] Setting permissions on /Applications/MAMP/bin/php4/zend/doc/Zend_Optimizer_User_Guide.pdf: mode=100644, owner=501
-[Sep 04 19:06:53] Unlinking: /Applications/MAMP/bin/php4/zend/bin
-[Sep 04 19:06:53] Executing: "mkdir -p '/Applications/MAMP/bin/php4/zend/bin'" (status: 0)
-[Sep 04 19:06:53] Copying: ../data/zendid to: /Applications/MAMP/bin/php4/zend/bin/zendid
-[Sep 04 19:06:54] Setting permissions on /Applications/MAMP/bin/php4/zend/bin/zendid: mode=100755, owner=501
-[Sep 04 19:06:54] Unlinking: /Applications/MAMP/bin/php4/zend/lib
-[Sep 04 19:06:54] Executing: "mkdir -p '/Applications/MAMP/bin/php4/zend/lib'" (status: 0)
-[Sep 04 19:06:54] Copying: ../data/ZendExtensionManager.so to: /Applications/MAMP/bin/php4/zend/lib/ZendExtensionManager.so
-[Sep 04 19:06:54] Setting permissions on /Applications/MAMP/bin/php4/zend/lib/ZendExtensionManager.so: mode=100644, owner=501
-[Sep 04 19:06:54] Unlinking: /Applications/MAMP/bin/php4/zend/etc
-[Sep 04 19:06:54] Executing: "mkdir -p '/Applications/MAMP/bin/php4/zend/etc'" (status: 0)
-[Sep 04 19:06:54] Copying: ../data/poweredbyoptimizer.gif to: /Applications/MAMP/bin/php4/zend/etc/poweredbyoptimizer.gif
-[Sep 04 19:06:54] Setting permissions on /Applications/MAMP/bin/php4/zend/etc/poweredbyoptimizer.gif: mode=100644, owner=501
-[Sep 04 19:06:54] Copying: ../README-ZendOptimizer to: /Applications/MAMP/bin/php4/zend/doc/README-ZendOptimizer
-[Sep 04 19:06:54] Setting permissions on /Applications/MAMP/bin/php4/zend/doc/README-ZendOptimizer: mode=100644, owner=501
-[Sep 04 19:06:54] Copying: ../EULA-ZendOptimizer to: /Applications/MAMP/bin/php4/zend/doc/EULA-ZendOptimizer
-[Sep 04 19:06:54] Setting permissions on /Applications/MAMP/bin/php4/zend/doc/EULA-ZendOptimizer: mode=100644, owner=501
-[Sep 04 19:06:54] Unlinking: /Applications/MAMP/bin/php4/zend/lib/Optimizer-3.3.3/php-4.4.x
-[Sep 04 19:06:54] Executing: "mkdir -p '/Applications/MAMP/bin/php4/zend/lib/Optimizer-3.3.3/php-4.4.x'" (status: 0)
-[Sep 04 19:06:54] Copying: ../data/4_4_x_comp/ZendOptimizer.so to: /Applications/MAMP/bin/php4/zend/lib/Optimizer-3.3.3/php-4.4.x/ZendOptimizer.so
-[Sep 04 19:06:54] Setting permissions on /Applications/MAMP/bin/php4/zend/lib/Optimizer-3.3.3/php-4.4.x/ZendOptimizer.so: mode=100644, owner=501
-[Sep 04 19:06:54] Unlinking: /Applications/MAMP/bin/php4/zend/lib/Optimizer-3.3.3/php-5.0.x
-[Sep 04 19:06:54] Executing: "mkdir -p '/Applications/MAMP/bin/php4/zend/lib/Optimizer-3.3.3/php-5.0.x'" (status: 0)
-[Sep 04 19:06:55] Copying: ../data/5_0_x_comp/ZendOptimizer.so to: /Applications/MAMP/bin/php4/zend/lib/Optimizer-3.3.3/php-5.0.x/ZendOptimizer.so
-[Sep 04 19:06:55] Setting permissions on /Applications/MAMP/bin/php4/zend/lib/Optimizer-3.3.3/php-5.0.x/ZendOptimizer.so: mode=100644, owner=501
-[Sep 04 19:06:55] Unlinking: /Applications/MAMP/bin/php4/zend/lib/Optimizer-3.3.3/php-5.1.x
-[Sep 04 19:06:55] Executing: "mkdir -p '/Applications/MAMP/bin/php4/zend/lib/Optimizer-3.3.3/php-5.1.x'" (status: 0)
-[Sep 04 19:06:55] Copying: ../data/5_1_x_comp/ZendOptimizer.so to: /Applications/MAMP/bin/php4/zend/lib/Optimizer-3.3.3/php-5.1.x/ZendOptimizer.so
-[Sep 04 19:06:55] Setting permissions on /Applications/MAMP/bin/php4/zend/lib/Optimizer-3.3.3/php-5.1.x/ZendOptimizer.so: mode=100644, owner=501
-[Sep 04 19:06:55] Unlinking: /Applications/MAMP/bin/php4/zend/lib/Optimizer-3.3.3/php-5.2.x
-[Sep 04 19:06:55] Executing: "mkdir -p '/Applications/MAMP/bin/php4/zend/lib/Optimizer-3.3.3/php-5.2.x'" (status: 0)
-[Sep 04 19:06:56] Copying: ../data/5_2_x_comp/ZendOptimizer.so to: /Applications/MAMP/bin/php4/zend/lib/Optimizer-3.3.3/php-5.2.x/ZendOptimizer.so
-[Sep 04 19:06:56] Setting permissions on /Applications/MAMP/bin/php4/zend/lib/Optimizer-3.3.3/php-5.2.x/ZendOptimizer.so: mode=100644, owner=501
-[Sep 04 19:06:56] Unlinking: /Applications/MAMP/bin/php4/zend/lib/Optimizer-3.3.3/php-4.3.x
-[Sep 04 19:06:56] Executing: "mkdir -p '/Applications/MAMP/bin/php4/zend/lib/Optimizer-3.3.3/php-4.3.x'" (status: 0)
-[Sep 04 19:06:57] Copying: ../data/4_3_x_comp/ZendOptimizer.so to: /Applications/MAMP/bin/php4/zend/lib/Optimizer-3.3.3/php-4.3.x/ZendOptimizer.so
-[Sep 04 19:06:57] Setting permissions on /Applications/MAMP/bin/php4/zend/lib/Optimizer-3.3.3/php-4.3.x/ZendOptimizer.so: mode=100644, owner=501
-[Sep 04 19:06:57] Added new extension to php.ini: zend_extension=/Applications/MAMP/bin/php4/zend/lib/ZendExtensionManager.so 
-[Sep 04 19:06:57] Replaced line: zend_extension_manager.optimizer=/Applications/MAMP/bin/php4/zend/lib/Optimizer-3.3.3 by: zend_extension_manager.optimizer=/Applications/MAMP/bin/php4/zend/lib/Optimizer-3.3.3 in php.ini
-[Sep 04 19:06:57] Replaced line: zend_optimizer.version=3.3.3 by: zend_optimizer.version=3.3.3 in php.ini
-[Sep 04 19:06:57] PHP.ini re-ordered
-[Sep 04 19:06:57] Backing-up file: /Applications/MAMP/conf/php4/php.ini
-[Sep 04 19:06:57] Copying: /Applications/MAMP/conf/php4/php.ini to: /Applications/MAMP/conf/php4/php.ini-zend_optimizer.bak
-[Sep 04 19:06:57] Setting permissions on /Applications/MAMP/conf/php4/php.ini-zend_optimizer.bak: mode=100755, owner=501, group=80
-[Sep 04 19:06:57] Saving PHP.ini file: /Applications/MAMP/conf/php4/php.ini
-[Sep 04 19:06:57] Open file: /Applications/MAMP/conf/php4/php.ini for writing
-[Sep 04 19:06:57] Relocating php.ini from: /Applications/MAMP/conf/php4/php.ini to: /Applications/MAMP/bin/php4/zend/etc/php.ini
-[Sep 04 19:06:57] Moving: /Applications/MAMP/conf/php4/php.ini to: /Applications/MAMP/bin/php4/zend/etc/php.ini
-[Sep 04 19:06:57] Unlinking: /Applications/MAMP/conf/php4/php.ini
-[Sep 04 19:06:57] Unlinking: /Applications/MAMP/conf/php4/php.ini
-[Sep 04 19:06:57] Symlinking /Applications/MAMP/conf/php4/php.ini -> /Applications/MAMP/bin/php4/zend/etc/php.ini
-[Sep 04 19:06:57] MSGBOX: "The following configuration changes have been made: - The php.ini file has been relocated from /Applications/MAMP/conf/php4 to /Applications/MAMP/bin/php4/zend/etc - A symbolic link for the php.ini file has been created in /Applications/MAMP/conf/php4. - The original php.ini was backed up to /Applications/MAMP/conf/php4/php.ini-zend_optimizer.bak "
-[Sep 04 19:06:57] ./dialog --clear --backtitle 'Zend Optimizer Installation' --title 'Zend Optimizer 3.3.3' --msgbox ' The following configuration changes have been made: - The php.ini file has been relocated from /Applications/MAMP/conf/php4 to /Applications/MAMP/bin/php4/zend/etc - A symbolic link for the php.ini file has been created in /Applications/MAMP/conf/php4. - The original php.ini was backed up to /Applications/MAMP/conf/php4/php.ini-zend_optimizer.bak ' 0 0
-[Sep 04 19:06:59] MSGBOX: "The installation has completed successfully. Zend Optimizer is now ready for use. You must restart your Web server for the modifications to take effect."
-[Sep 04 19:06:59] ./dialog --clear --backtitle 'Zend Optimizer Installation' --title 'Zend Optimizer 3.3.3' --msgbox ' The installation has completed successfully. Zend Optimizer is now ready for use. You must restart your Web server for the modifications to take effect. ' 0 0
-[Sep 04 19:07:01] YESNO: Restart the Web server now?
-[Sep 04 19:07:01] ./dialog --clear --backtitle 'Zend Optimizer Installation' --title 'Zend Optimizer 3.3.3' --yesno ' Restart the Web server now? ' 0 0
-[Sep 04 19:07:02] User choose: NO
-[Sep 04 19:07:02] Cleaning up ...
-[Sep 04 19:07:02] Unlinking: /Applications/MAMP/bin/php4/zend/logs
-[Sep 04 19:07:02] Executing: "mkdir -p '/Applications/MAMP/bin/php4/zend/logs'" (status: 0)
+[Oct 11 18:36:29] Starting installation of Zend Optimizer ...
+[Oct 11 18:36:29] Executing: uname -s 2>/dev/null
+[Oct 11 18:36:29] Command has returned exit status: 0
+[Oct 11 18:36:29] Executing: uname -p 2>/dev/null
+[Oct 11 18:36:29] Command has returned exit status: 0
+[Oct 11 18:36:29] Executing: uname -r 2>/dev/null
+[Oct 11 18:36:29] Command has returned exit status: 0
+[Oct 11 18:36:29] Executing: uname -n 2>/dev/null
+[Oct 11 18:36:29] Command has returned exit status: 0
+[Oct 11 18:36:29] System: Darwin 8.11.0 powerpc
+[Oct 11 18:36:29] Hostname: allumette.local
+[Oct 11 18:36:29] Setting TEMP=/tmp/zend_install.23500
+[Oct 11 18:36:29] Creating directory: /tmp/zend_install.23500
+[Oct 11 18:36:29] MSGBOX: "Welcome to the Zend Optimizer 3.3.3 Installation! For more information regarding this procedure, please see the Zend Optimizer Installation Guide. "
+[Oct 11 18:36:29] ./dialog --clear --backtitle 'Zend Optimizer Installation' --title 'Zend Optimizer 3.3.3' --msgbox ' Welcome to the Zend Optimizer 3.3.3 Installation! For more information regarding this procedure, please see the Zend Optimizer Installation Guide. ' 0 0
+[Oct 11 18:36:31] Showing license: ..//LICENSE
+[Oct 11 18:36:31] Wrapping text from file: ..//LICENSE
+[Oct 11 18:36:31] Open file: /tmp/zend_install.23500/LICENSE.wrapped for writing
+[Oct 11 18:36:31] ./dialog --clear --backtitle 'Zend Optimizer Installation' --title 'Zend Optimizer 3.3.3' --textbox '/tmp/zend_install.23500/LICENSE.wrapped' 0 0
+[Oct 11 18:36:32] YESNO: IMPORTANT: BY SELECTING THE 'YES' OPTION BELOW, DOWNLOADING, INSTALLING, OR OTHERWISE USING THIS SOFTWARE, YOU ACKNOWLEDGE THAT YOU HAVE READ THE LICENSE AGREEMENT, AND THAT YOU AGREE TO BE BOUND BY ITS TERMS AND CONDITIONS. IF YOU DO NOT AGREE TO ALL OF THE TERMS AND CONDITIONS OF SUCH AGREEMENT, YOU ARE NOT AN AUTHORIZED USER OF THE SOFTWARE AND IT IS YOUR RESPONSIBILITY TO EXIT THIS DOWNLOADING/INSTALLATION PROCESS WITHOUT DOWNLOADING OR INSTALLING THE SOFTWARE BY SELECTING THE 'NO' OPTION BELOW, AND TO DELETE THE SOFTWARE FROM YOUR COMPUTER. Do you accept the terms of this license?
+[Oct 11 18:36:32] ./dialog --clear --backtitle 'Zend Optimizer Installation' --title 'Zend Optimizer 3.3.3' --yesno ' IMPORTANT: BY SELECTING THE '\''YES'\'' OPTION BELOW, DOWNLOADING, INSTALLING, OR OTHERWISE USING THIS SOFTWARE, YOU ACKNOWLEDGE THAT YOU HAVE READ THE LICENSE AGREEMENT, AND THAT YOU AGREE TO BE BOUND BY ITS TERMS AND CONDITIONS. IF YOU DO NOT AGREE TO ALL OF THE TERMS AND CONDITIONS OF SUCH AGREEMENT, YOU ARE NOT AN AUTHORIZED USER OF THE SOFTWARE AND IT IS YOUR RESPONSIBILITY TO EXIT THIS DOWNLOADING/INSTALLATION PROCESS WITHOUT DOWNLOADING OR INSTALLING THE SOFTWARE BY SELECTING THE '\''NO'\'' OPTION BELOW, AND TO DELETE THE SOFTWARE FROM YOUR COMPUTER. Do you accept the terms of this license? ' 0 0
+[Oct 11 18:36:33] User choose: YES
+[Oct 11 18:36:33] Choosing install prefix ...
+[Oct 11 18:36:33] ASK: Please specify the location for installing Zend Optimizer: 
+[Oct 11 18:36:33] ./dialog --clear --backtitle 'Zend Optimizer Installation' --title 'Zend Optimizer 3.3.3' --inputbox ' Please specify the location for installing Zend Optimizer: ' 0 0 '/usr/local/Zend'
+[Oct 11 18:36:55] INPUTBOX: /Applications/MAMP/bin/php4/zend
+[Oct 11 18:36:55] Trying to guess PHP.ini location ...
+[Oct 11 18:36:55] ASK: Enter the location of your php.ini file
+[Oct 11 18:36:55] ./dialog --clear --backtitle 'Zend Optimizer Installation' --title 'Zend Optimizer 3.3.3' --inputbox ' Enter the location of your php.ini file ' 0 0 ' '
+[Oct 11 18:37:08] INPUTBOX: /Applications/MAMP/conf/php4 
+[Oct 11 18:37:08] Confirmed the location of php.ini at: /Applications/MAMP/conf/php4
+[Oct 11 18:37:08] Reading PHP.ini: /Applications/MAMP/conf/php4/php.ini
+[Oct 11 18:37:08] Creating directory: /tmp/zend_install.23500/saved
+[Oct 11 18:37:08] Open file: /tmp/zend_install.23500/saved/_Applications_MAMP_conf_php4_php.ini for writing
+[Oct 11 18:37:08] YESNO: Are you using Apache Web server?
+[Oct 11 18:37:08] ./dialog --clear --backtitle 'Zend Optimizer Installation' --title 'Zend Optimizer 3.3.3' --yesno ' Are you using Apache Web server? ' 0 0
+[Oct 11 18:37:09] User choose: YES
+[Oct 11 18:37:09] Trying to guess Apache executable file ...
+[Oct 11 18:37:09] ASK: Specify the full path to the Apache control utility (apachectl)
+[Oct 11 18:37:10] ./dialog --clear --backtitle 'Zend Optimizer Installation' --title 'Zend Optimizer 3.3.3' --inputbox ' Specify the full path to the Apache control utility (apachectl) ' 0 0 '/usr/sbin/apachectl'
+[Oct 11 18:37:29] INPUTBOX: /Applications/MAMP/Library/bin/apachectl
+[Oct 11 18:37:29] Executing: /usr/bin/file -bi /Applications/MAMP/Library/bin/apachectl 2>/dev/null
+[Oct 11 18:37:29] Command has returned exit status: 0
+[Oct 11 18:37:29] Found apachectl: /Applications/MAMP/Library/bin/apachectl
+[Oct 11 18:37:29] Found httpd: /Applications/MAMP/Library/bin/httpd
+[Oct 11 18:37:29] Executing: /Applications/MAMP/Library/bin/httpd -V 2>/dev/null
+[Oct 11 18:37:29] Command has returned exit status: 0
+[Oct 11 18:37:29] Guessed from Apache executable: HTTPD_ROOT=/Applications/MAMP/Library
+[Oct 11 18:37:29] Guessed from Apache executable: APACHE_VERSION=2
+[Oct 11 18:37:29] Guessed from Apache executable: ERROR_LOG=/Applications/MAMP/Library/logs/error_log
+[Oct 11 18:37:29] Guessed from Apache executable: APACHE_CONFIG=/Applications/MAMP/conf/apache/httpd.conf
+[Oct 11 18:37:29] Guessed from Apache executable: DEFAULT_PIDLOG=/Applications/MAMP/Library/logs/httpd.pid
+[Oct 11 18:37:29] Executing: /Applications/MAMP/Library/bin/httpd -l 2>/dev/null
+[Oct 11 18:37:29] Command has returned exit status: 0
+[Oct 11 18:37:29] Executing: /Applications/MAMP/Library/bin/httpd -V 2>/dev/null
+[Oct 11 18:37:29] Command has returned exit status: 0
+[Oct 11 18:37:29] Executing: /Applications/MAMP/Library/bin/httpd -l 2>/dev/null
+[Oct 11 18:37:29] Command has returned exit status: 0
+[Oct 11 18:37:29] Removed 4.2.0 from array of PHP versions
+[Oct 11 18:37:29] Removed 4.2.x from array of PHP versions
+[Oct 11 18:37:29] Removed 4.3.x from array of PHP versions
+[Oct 11 18:37:29] Added 4.3.x (PHP 4.3.x) from version 2 to the array of PHP versions
+[Oct 11 18:37:30] Detecting PHP version ...
+[Oct 11 18:37:30] Opening Apache configuration file.
+[Oct 11 18:37:30] Found "Include" directive in /Applications/MAMP/conf/apache/httpd.conf: /Applications/MAMP/conf/apache/ssl.conf
+[Oct 11 18:37:30] Guessed from Apache httpd.conf: USER=www
+[Oct 11 18:37:30] Guessed from Apache httpd.conf: PORT=8888
+[Oct 11 18:37:30] Guessed from Apache httpd.conf: GROUP=#-1
+[Oct 11 18:37:30] Guessed from Apache httpd.conf: MaxClients=150
+[Oct 11 18:37:30] Guessed from Apache httpd.conf: PidFile=/Applications/MAMP/Library/logs/httpd.pid
+[Oct 11 18:37:30] Guessed from Apache httpd.conf: DOCUMENT_ROOT=/Applications/MAMP/htdocs
+[Oct 11 18:37:30] Guessed from Apache httpd.conf: GLOBAL_DOCUMENT_ROOT=/Applications/MAMP/htdocs
+[Oct 11 18:37:30] Guessed from Apache httpd.conf: APACHE_LIBEXEC=/Applications/MAMP/Library/modules
+[Oct 11 18:37:30] Guessed from Apache httpd.conf: PHP_PATH=/Applications/MAMP/Library/modules/libphp5.so
+[Oct 11 18:37:30] Guessed from Apache httpd.conf: PHP_TYPE=module
+[Oct 11 18:37:30] Executing: /usr/bin/strings /Applications/MAMP/Library/modules/libphp5.so
+[Oct 11 18:37:31] Command has returned exit status: 0
+[Oct 11 18:37:33] Detected PHP version: 5.2.x
+[Oct 11 18:37:33] Gathering components info ...
+[Oct 11 18:37:33] Unlinking: /Applications/MAMP/bin/php4/zend/doc
+[Oct 11 18:37:33] Executing: "mkdir -p '/Applications/MAMP/bin/php4/zend/doc'" (status: 0)
+[Oct 11 18:37:33] Copying: ../data/doc/Zend_Optimizer_User_Guide.pdf to: /Applications/MAMP/bin/php4/zend/doc/Zend_Optimizer_User_Guide.pdf
+[Oct 11 18:37:33] Setting permissions on /Applications/MAMP/bin/php4/zend/doc/Zend_Optimizer_User_Guide.pdf: mode=100644, owner=501
+[Oct 11 18:37:33] Unlinking: /Applications/MAMP/bin/php4/zend/bin
+[Oct 11 18:37:33] Executing: "mkdir -p '/Applications/MAMP/bin/php4/zend/bin'" (status: 0)
+[Oct 11 18:37:33] Copying: ../data/zendid to: /Applications/MAMP/bin/php4/zend/bin/zendid
+[Oct 11 18:37:33] Setting permissions on /Applications/MAMP/bin/php4/zend/bin/zendid: mode=100755, owner=501
+[Oct 11 18:37:33] Unlinking: /Applications/MAMP/bin/php4/zend/lib
+[Oct 11 18:37:33] Executing: "mkdir -p '/Applications/MAMP/bin/php4/zend/lib'" (status: 0)
+[Oct 11 18:37:33] Copying: ../data/ZendExtensionManager.so to: /Applications/MAMP/bin/php4/zend/lib/ZendExtensionManager.so
+[Oct 11 18:37:33] Setting permissions on /Applications/MAMP/bin/php4/zend/lib/ZendExtensionManager.so: mode=100644, owner=501
+[Oct 11 18:37:33] Unlinking: /Applications/MAMP/bin/php4/zend/etc
+[Oct 11 18:37:33] Executing: "mkdir -p '/Applications/MAMP/bin/php4/zend/etc'" (status: 0)
+[Oct 11 18:37:33] Copying: ../data/poweredbyoptimizer.gif to: /Applications/MAMP/bin/php4/zend/etc/poweredbyoptimizer.gif
+[Oct 11 18:37:33] Setting permissions on /Applications/MAMP/bin/php4/zend/etc/poweredbyoptimizer.gif: mode=100644, owner=501
+[Oct 11 18:37:33] Copying: ../README-ZendOptimizer to: /Applications/MAMP/bin/php4/zend/doc/README-ZendOptimizer
+[Oct 11 18:37:33] Setting permissions on /Applications/MAMP/bin/php4/zend/doc/README-ZendOptimizer: mode=100644, owner=501
+[Oct 11 18:37:33] Copying: ../EULA-ZendOptimizer to: /Applications/MAMP/bin/php4/zend/doc/EULA-ZendOptimizer
+[Oct 11 18:37:33] Setting permissions on /Applications/MAMP/bin/php4/zend/doc/EULA-ZendOptimizer: mode=100644, owner=501
+[Oct 11 18:37:33] Unlinking: /Applications/MAMP/bin/php4/zend/lib/Optimizer-3.3.3/php-4.4.x
+[Oct 11 18:37:33] Executing: "mkdir -p '/Applications/MAMP/bin/php4/zend/lib/Optimizer-3.3.3/php-4.4.x'" (status: 0)
+[Oct 11 18:37:34] Copying: ../data/4_4_x_comp/ZendOptimizer.so to: /Applications/MAMP/bin/php4/zend/lib/Optimizer-3.3.3/php-4.4.x/ZendOptimizer.so
+[Oct 11 18:37:34] Setting permissions on /Applications/MAMP/bin/php4/zend/lib/Optimizer-3.3.3/php-4.4.x/ZendOptimizer.so: mode=100644, owner=501
+[Oct 11 18:37:34] Unlinking: /Applications/MAMP/bin/php4/zend/lib/Optimizer-3.3.3/php-5.0.x
+[Oct 11 18:37:34] Executing: "mkdir -p '/Applications/MAMP/bin/php4/zend/lib/Optimizer-3.3.3/php-5.0.x'" (status: 0)
+[Oct 11 18:37:34] Copying: ../data/5_0_x_comp/ZendOptimizer.so to: /Applications/MAMP/bin/php4/zend/lib/Optimizer-3.3.3/php-5.0.x/ZendOptimizer.so
+[Oct 11 18:37:34] Setting permissions on /Applications/MAMP/bin/php4/zend/lib/Optimizer-3.3.3/php-5.0.x/ZendOptimizer.so: mode=100644, owner=501
+[Oct 11 18:37:34] Unlinking: /Applications/MAMP/bin/php4/zend/lib/Optimizer-3.3.3/php-5.1.x
+[Oct 11 18:37:34] Executing: "mkdir -p '/Applications/MAMP/bin/php4/zend/lib/Optimizer-3.3.3/php-5.1.x'" (status: 0)
+[Oct 11 18:37:34] Copying: ../data/5_1_x_comp/ZendOptimizer.so to: /Applications/MAMP/bin/php4/zend/lib/Optimizer-3.3.3/php-5.1.x/ZendOptimizer.so
+[Oct 11 18:37:34] Setting permissions on /Applications/MAMP/bin/php4/zend/lib/Optimizer-3.3.3/php-5.1.x/ZendOptimizer.so: mode=100644, owner=501
+[Oct 11 18:37:34] Unlinking: /Applications/MAMP/bin/php4/zend/lib/Optimizer-3.3.3/php-5.2.x
+[Oct 11 18:37:34] Executing: "mkdir -p '/Applications/MAMP/bin/php4/zend/lib/Optimizer-3.3.3/php-5.2.x'" (status: 0)
+[Oct 11 18:37:35] Copying: ../data/5_2_x_comp/ZendOptimizer.so to: /Applications/MAMP/bin/php4/zend/lib/Optimizer-3.3.3/php-5.2.x/ZendOptimizer.so
+[Oct 11 18:37:35] Setting permissions on /Applications/MAMP/bin/php4/zend/lib/Optimizer-3.3.3/php-5.2.x/ZendOptimizer.so: mode=100644, owner=501
+[Oct 11 18:37:35] Unlinking: /Applications/MAMP/bin/php4/zend/lib/Optimizer-3.3.3/php-4.3.x
+[Oct 11 18:37:35] Executing: "mkdir -p '/Applications/MAMP/bin/php4/zend/lib/Optimizer-3.3.3/php-4.3.x'" (status: 0)
+[Oct 11 18:37:36] Copying: ../data/4_3_x_comp/ZendOptimizer.so to: /Applications/MAMP/bin/php4/zend/lib/Optimizer-3.3.3/php-4.3.x/ZendOptimizer.so
+[Oct 11 18:37:36] Setting permissions on /Applications/MAMP/bin/php4/zend/lib/Optimizer-3.3.3/php-4.3.x/ZendOptimizer.so: mode=100644, owner=501
+[Oct 11 18:37:36] Added new extension to php.ini: zend_extension=/Applications/MAMP/bin/php4/zend/lib/ZendExtensionManager.so 
+[Oct 11 18:37:36] Replaced line: zend_extension_manager.optimizer=/Applications/MAMP/bin/php4/zend/lib/Optimizer-3.3.3 by: zend_extension_manager.optimizer=/Applications/MAMP/bin/php4/zend/lib/Optimizer-3.3.3 in php.ini
+[Oct 11 18:37:36] Replaced line: zend_optimizer.version=3.3.3 by: zend_optimizer.version=3.3.3 in php.ini
+[Oct 11 18:37:36] PHP.ini re-ordered
+[Oct 11 18:37:36] Backing-up file: /Applications/MAMP/conf/php4/php.ini
+[Oct 11 18:37:36] Copying: /Applications/MAMP/conf/php4/php.ini to: /Applications/MAMP/conf/php4/php.ini-zend_optimizer.bak
+[Oct 11 18:37:36] Setting permissions on /Applications/MAMP/conf/php4/php.ini-zend_optimizer.bak: mode=100755, owner=501, group=80
+[Oct 11 18:37:36] Saving PHP.ini file: /Applications/MAMP/conf/php4/php.ini
+[Oct 11 18:37:36] Open file: /Applications/MAMP/conf/php4/php.ini for writing
+[Oct 11 18:37:36] Relocating php.ini from: /Applications/MAMP/conf/php4/php.ini to: /Applications/MAMP/bin/php4/zend/etc/php.ini
+[Oct 11 18:37:36] Moving: /Applications/MAMP/conf/php4/php.ini to: /Applications/MAMP/bin/php4/zend/etc/php.ini
+[Oct 11 18:37:36] Unlinking: /Applications/MAMP/conf/php4/php.ini
+[Oct 11 18:37:36] Unlinking: /Applications/MAMP/conf/php4/php.ini
+[Oct 11 18:37:36] Symlinking /Applications/MAMP/conf/php4/php.ini -> /Applications/MAMP/bin/php4/zend/etc/php.ini
+[Oct 11 18:37:36] MSGBOX: "The following configuration changes have been made: - The php.ini file has been relocated from /Applications/MAMP/conf/php4 to /Applications/MAMP/bin/php4/zend/etc - A symbolic link for the php.ini file has been created in /Applications/MAMP/conf/php4. - The original php.ini was backed up to /Applications/MAMP/conf/php4/php.ini-zend_optimizer.bak "
+[Oct 11 18:37:36] ./dialog --clear --backtitle 'Zend Optimizer Installation' --title 'Zend Optimizer 3.3.3' --msgbox ' The following configuration changes have been made: - The php.ini file has been relocated from /Applications/MAMP/conf/php4 to /Applications/MAMP/bin/php4/zend/etc - A symbolic link for the php.ini file has been created in /Applications/MAMP/conf/php4. - The original php.ini was backed up to /Applications/MAMP/conf/php4/php.ini-zend_optimizer.bak ' 0 0
+[Oct 11 18:37:39] MSGBOX: "The installation has completed successfully. Zend Optimizer is now ready for use. You must restart your Web server for the modifications to take effect."
+[Oct 11 18:37:39] ./dialog --clear --backtitle 'Zend Optimizer Installation' --title 'Zend Optimizer 3.3.3' --msgbox ' The installation has completed successfully. Zend Optimizer is now ready for use. You must restart your Web server for the modifications to take effect. ' 0 0
+[Oct 11 18:37:41] YESNO: Restart the Web server now?
+[Oct 11 18:37:41] ./dialog --clear --backtitle 'Zend Optimizer Installation' --title 'Zend Optimizer 3.3.3' --yesno ' Restart the Web server now? ' 0 0
+[Oct 11 18:37:43] User choose: NO
+[Oct 11 18:37:43] Cleaning up ...
+[Oct 11 18:37:43] Unlinking: /Applications/MAMP/bin/php4/zend/logs
+[Oct 11 18:37:43] Executing: "mkdir -p '/Applications/MAMP/bin/php4/zend/logs'" (status: 0)

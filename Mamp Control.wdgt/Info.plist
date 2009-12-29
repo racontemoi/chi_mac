@@ -13,9 +13,9 @@
 	<key>CFBundleName</key>
 	<string>Mamp Control</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.8.2</string>
+	<string>1.8.4</string>
 	<key>CFBundleVersion</key>
-	<string>1.8.2</string>
+	<string>1.8.4</string>
 	<key>CloseBoxInsetX</key>
 	<integer>20</integer>
 	<key>CloseBoxInsetY</key>

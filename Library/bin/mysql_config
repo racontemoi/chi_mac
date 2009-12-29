@@ -99,7 +99,7 @@ ldflags=' '
 if [ 3306 -eq 0 ]; then
   port=0
 else
-  port=9999
+  port=3306
 fi
 
 # Create options 

@@ -16,14 +16,14 @@
 # The following options will be passed to all MySQL clients
 [client]
 #password	= your_password
-port		= 9999
+port		= 3306
 socket		= /Applications/MAMP/tmp/mysql/mysql.sock
 
 # Here follows entries for some specific programs
 
 # The MySQL server
 [mysqld]
-port		= 9999
+port		= 3306
 socket		= /Applications/MAMP/tmp/mysql/mysql.sock
 skip-locking
 key_buffer_size = 256M

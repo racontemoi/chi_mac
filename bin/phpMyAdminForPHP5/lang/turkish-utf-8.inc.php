@@ -1,5 +1,5 @@
 <?php
-/* $Id: turkish-utf-8.inc.php 12494 2009-05-25 08:11:32Z helmo $ */
+/* $Id: turkish-utf-8.inc.php 13109 2009-11-08 12:04:19Z lem9 $ */
 
 // phpMyAdmin Türkçe (Turkish)
 // Çeviren Burak Yavuz (BouRock)
@@ -1030,7 +1030,7 @@ $strSetupServers_controluser_desc = 'Sınırlı yetkilerle yapılandırılmış 
 $strSetupServers_controluser_name = 'Denetim kullanıcısı';
 $strSetupServers_CountTables_desc = 'Veritabanı listesini gösterirken tabloları sayar';
 $strSetupServers_CountTables_name = 'Tabloları say';
-$strSetupServers_designer_coords_desc = 'Tasarımcı desteği istenmiyorsa boş bırakın, varsayılan: [kbd]designer_coords[/kbd]';
+$strSetupServers_designer_coords_desc = 'Tasarımcı desteği istenmiyorsa boş bırakın, varsayılan: [kbd]pma_designer_coords[/kbd]';
 $strSetupServers_designer_coords_name = 'Tasarımcı tablosu';
 $strSetupServers_DisableIS_desc = '[a@http://sf.net/support/tracker.php?aid=1849494]PMA hata izleyici[/a] ve [a@http://bugs.mysql.com/19588]MySQL Hataları[/a] üzerine daha fazla bilgi';
 $strSetupServers_DisableIS_name = 'INFORMATION_SCHEMA kullanımı etkisiz';
@@ -1067,7 +1067,6 @@ $strSetupServers_SignonURL_name = 'Oturum açma URL\'si';
 $strSetupServerSslMsg = 'Eğer web sunucunuz destekliyorsa SSL bağlantı kullanmalısınız';
 $strSetupServers_socket_desc = 'MySQL sunucusunun dinlemede olduğu soket, varsayılan ayar için boş bırakın';
 $strSetupServers_socket_name = 'Sunucu soketi';
-$strSetupServers_ssl_desc = '';
 $strSetupServers_ssl_name = 'SSL kullan';
 $strSetupServers_table_info_desc = 'Görüntü alanlarını tanımlayan tablodur, destek istenmiyorsa boş bırakın; varsayılan: [kbd]pma_table_info[/kbd]';
 $strSetupServers_table_info_name = 'Görüntü alanları tablosu';
@@ -1464,4 +1463,5 @@ $strReplicationStatus = 'Replication status';  //to translate
 $strReplicationStatusInfo = 'This MySQL server works as %s in <b>replication</b> process. For further information about replication status on the server, please visit the <a href="#replication">replication section</a>.';  //to translate
 $strReplicationStatus_master = 'Master status';  //to translate
 $strReplicationStatus_slave = 'Slave status';  //to translate
+$strSetupServers_ssl_desc = 'Enable SSL for connection to MySQL server';  //to translate
 ?>

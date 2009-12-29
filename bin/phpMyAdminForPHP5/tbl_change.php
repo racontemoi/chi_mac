@@ -5,7 +5,7 @@
  *
  * register_globals_save (mark this file save for disabling register globals)
  *
- * @version $Id: tbl_change.php 12390 2009-05-04 16:05:24Z lem9 $
+ * @version $Id: tbl_change.php 13118 2009-11-21 13:22:08Z lem9 $
  * @package phpMyAdmin
  */
 
@@ -19,7 +19,6 @@ require_once './libraries/common.inc.php';
  */
 require_once './libraries/db_table_exists.lib.php';
 
-
 /**
  * Sets global variables.
  * Here it's better to use a if, instead of the '?' operator
@@ -31,6 +30,10 @@ require_once './libraries/db_table_exists.lib.php';
  */
 if (isset($_REQUEST['primary_key'])) {
     $primary_key = $_REQUEST['primary_key'];
+}
+
+if (isset($_REQUEST['clause_is_unique'])) {
+    $clause_is_unique = $_REQUEST['clause_is_unique'];
 }
 if (isset($_SESSION['edit_next'])) {
     $primary_key = $_SESSION['edit_next'];
@@ -177,16 +180,17 @@ if (isset($primary_key)) {
             PMA_showMessage($strEmptyResultSet, $local_query);
             echo "\n";
             require_once './libraries/footer.inc.php';
-        } else { // end if (no record returned)
+        } else { // end if (no row returned)
             $meta = PMA_DBI_get_fields_meta($result[$key_id]);
-            if ($tmp = PMA_getUniqueCondition($result[$key_id], count($meta), $meta, $rows[$key_id], true)) {
+            list($unique_condition, $tmp_clause_is_unique) = PMA_getUniqueCondition($result[$key_id], count($meta), $meta, $rows[$key_id], true);
+            if (! empty($unique_condition)) {
                 $found_unique_key = true;
             }
-            unset($tmp);
+            unset($unique_condition, $tmp_clause_is_unique);
         }
     }
 } else {
-    // no primary key given, just load first row - but what happens if tbale is empty?
+    // no primary key given, just load first row - but what happens if table is empty?
     $insert_mode = true;
     $result = PMA_DBI_query('SELECT * FROM ' . PMA_backquote($db) . '.' . PMA_backquote($table) . ' LIMIT 1;', null, PMA_DBI_QUERY_STORE);
     $rows = array_fill(0, $cfg['InsertRows'], false);
@@ -233,6 +237,9 @@ if (isset($primary_keys)) {
         $_form_params['primary_key[' . $key_id . ']'] = trim($primary_key);
     }
 }
+if (isset($clause_is_unique)) {
+    $_form_params['clause_is_unique'] = $clause_is_unique;
+}
 
 ?>
 <!-- Insert/Edit form -->
@@ -266,7 +273,7 @@ if (! empty($sql_query)) {
 
 if (! $cfg['ShowFunctionFields']) {
     $this_url_params = array_merge($url_params,
-        array('ShowFunctionFields' => 1));
+        array('ShowFunctionFields' => 1, 'goto' => 'sql.php'));
     echo $strShow . ' : <a href="tbl_change.php' . PMA_generate_common_url($this_url_params) . '">' . $strFunction . '</a>' . "\n";
 }
 
@@ -293,7 +300,7 @@ foreach ($rows as $row_id => $vrow) {
 <?php
     if ($cfg['ShowFunctionFields']) {
         $this_url_params = array_merge($url_params,
-            array('ShowFunctionFields' => 0));
+            array('ShowFunctionFields' => 0, 'goto' => 'sql.php'));
         echo '          <th><a href="tbl_change.php' . PMA_generate_common_url($this_url_params) . '" title="' . $strHide . '">' . $strFunction . '</a></th>' . "\n";
     }
 ?>
@@ -464,7 +471,7 @@ foreach ($rows as $row_id => $vrow) {
                 $data                     = $field['Default'];
             }
             if ($field['True_Type'] == 'bit') {
-                $special_chars = PMA_printable_bit_value($field['Default'], $extracted_fieldspec['spec_in_brackets']);
+                $special_chars = PMA_convert_bit_default_value($field['Default']);
             } else {
                 $special_chars = htmlspecialchars($field['Default']);
             }
@@ -525,8 +532,12 @@ foreach ($rows as $row_id => $vrow) {
                     $default_function = $cfg['DefaultFunctions']['first_timestamp'];
                 }
 
-                if ($field['Key'] == 'PRI'
-                 && ($field['Type'] == 'char(36)' || $field['Type'] == 'varchar(36)')) {
+                // For primary keys of type char(36) or varchar(36) UUID if the default function
+                // Only applies to insert mode, as it would silently trash data on updates.
+                if ($insert_mode
+                    && $field['Key'] == 'PRI'
+                    && ($field['Type'] == 'char(36)' || $field['Type'] == 'varchar(36)')
+                ) {
                      $default_function = $cfg['DefaultFunctions']['pk_char36'];
                 }
 
@@ -750,11 +761,7 @@ foreach ($rows as $row_id => $vrow) {
                     echo '<input type="radio" name="field_' . $field_name_appendix_md5 . '"';
                     echo ' value="' . $enum_value['html'] . '"';
                     echo ' id="field_' . ($idindex) . '_3_'  . $j . '"';
-                    echo ' onclick="';
-                    echo "if (typeof(document.forms['insertForm'].elements['fields_null"
-                        . $field_name_appendix . "']) != 'undefined') {document.forms['insertForm'].elements['fields_null"
-                        . $field_name_appendix . "'].checked = false}";
-                    echo '"';
+                    echo $unnullify_trigger;
                     if ($data == $enum_value['plain']
                      || ($data == ''
                       && (! isset($primary_key) || $field['Null'] != 'YES')

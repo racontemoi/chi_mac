@@ -1,5 +1,5 @@
 <?php
-/* $Id: galician-utf-8.inc.php 12494 2009-05-25 08:11:32Z helmo $ */
+/* $Id: galician-utf-8.inc.php 13109 2009-11-08 12:04:19Z lem9 $ */
 
 /**
  * Translated by Xosé Calvo <xosecalvo at galizaweb.net>
@@ -1209,7 +1209,6 @@ $strSetupServers_port_desc = 'Porto polo que está a escoitar o servidor de MySQ
 $strSetupServers_socket_name = 'Socket do servidor';
 $strSetupServers_socket_desc = 'Socket polo que está a escoitar o servidor de MySQL; déixeo en branco para deixar o predefinido';
 $strSetupServers_ssl_name = 'Empregar SSL';
-$strSetupServers_ssl_desc = '';
 $strSetupServers_connect_type_name = 'Tipo de conexión';
 $strSetupServers_connect_type_desc = 'Como ligar co servidor; déixeo como tc se non está segura/a';
 $strSetupServers_extension_name = 'Extensión PHP que empregar';
@@ -1265,7 +1264,7 @@ $strSetupServers_column_info_desc = 'Déixeo en branco se non quere comentarios/
 $strSetupServers_history_name = 'Táboa do historial de procuras SQL query';
 $strSetupServers_history_desc = 'Déixeo en branco se non quere un histórico das procuras SQL; por omisión: [kbd]pma_history[/kbd]';
 $strSetupServers_designer_coords_name = 'Táboa de Designer';
-$strSetupServers_designer_coords_desc = 'Déixeo en branco se non quere empregar Designer; por omisión: [kbd]designer_coords[/kbd]';
+$strSetupServers_designer_coords_desc = 'Déixeo en branco se non quere empregar Designer; por omisión: [kbd]pma_designer_coords[/kbd]';
 $strSetupUploadDir_name = 'Directorio de envíos';
 $strSetupUploadDir_desc = 'Directorio do servidor ao que se poden enviar os ficheiros que importar';
 $strSetupSaveDir_name = 'Directorio de gardado';
@@ -1459,4 +1458,5 @@ $strReplicationStatus = 'Estado da replicación';
 $strReplicationStatusInfo = 'Este servidor de MySQL server funciona como %s en proceso de <b>replicación</b>. Para máis información acerca do estado de replicación do servidor visite a <a href="#replication">sección sobre replicación</a>.';
 $strReplicationStatus_master = 'Estado do mestre';
 $strReplicationStatus_slave = 'Estado do escravo';
+$strSetupServers_ssl_desc = 'Enable SSL for connection to MySQL server';  //to translate
 ?>
