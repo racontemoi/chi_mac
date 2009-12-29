@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AllowFullAccess</key>
+	<true/>
+	<key>AllowMultipleInstances</key>
+	<false/>
+	<key>CFBundleDisplayName</key>
+	<string>Mamp Control</string>
+	<key>CFBundleIdentifier</key>
+	<string>de.appsolute.widget.mamp</string>
+	<key>CFBundleName</key>
+	<string>Mamp Control</string>
+	<key>CFBundleShortVersionString</key>
+	<string>1.8.2</string>
+	<key>CFBundleVersion</key>
+	<string>1.8.2</string>
+	<key>CloseBoxInsetX</key>
+	<integer>20</integer>
+	<key>CloseBoxInsetY</key>
+	<integer>20</integer>
+	<key>DefaultImage</key>
+	<string>No</string>
+	<key>Height</key>
+	<integer>160</integer>
+	<key>MainHTML</key>
+	<string>mampwidget.html</string>
+	<key>Plugin</key>
+	<string>mampwidget.widgetplugin</string>
+	<key>Width</key>
+	<integer>160</integer>
+</dict>
+</plist>

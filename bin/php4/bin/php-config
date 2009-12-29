@@ -1,0 +1,29 @@
+#! /bin/sh
+
+prefix="/Applications/MAMP/bin/php4"
+version="4.4.9"
+includedir="${prefix}/include/php"
+includes="-I$includedir -I$includedir/main -I$includedir/TSRM -I$includedir/Zend"
+ldflags=" -L/Applications/MAMP/Library/lib -L/Applications/MAMP/Library/lib/mysql"
+libs="  -lsablot -lexpat -lmysqlclient -lldap -llber -lt1 -lfreetype -lpng -lz -ljpeg -lexslt -lxml2 -lxslt -lz -lcurl -lbz2 -lz -lssl -lcrypto -lm  -lgssapi_krb5 -lkrb5 -lk5crypto -lkrb5support -lcom_err -lresolv -lcurl -lidn -lssl -lcrypto -lldap -lz -lxml2 -lz -liconv -lm "
+extension_dir='/Applications/MAMP/bin/php4/lib/php/extensions/no-debug-non-zts-20020429'
+
+case "$1" in
+--prefix)
+	echo $prefix;;
+--includes)
+	echo $includes;;
+--ldflags)
+	echo $ldflags;;
+--libs)
+	echo $libs;;
+--extension-dir)
+	echo $extension_dir;;
+--version)
+	echo $version;;
+*)
+	echo "Usage: $0 [--prefix|--includes|--ldflags|--libs|--extension-dir|--version]"
+	exit 1;;
+esac
+
+exit 0

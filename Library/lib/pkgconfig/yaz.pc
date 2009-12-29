@@ -1,0 +1,12 @@
+prefix=/Applications/MAMP/Library
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+includedir=${prefix}/include
+
+Name: YAZ
+Version: 3.0.47
+Description: YAZ library.
+Requires: libexslt
+Libs: -L${libdir} -lyaz
+Libs.private: -L/sw/lib -lexslt -lxslt -lxml2 -lpthread -lz -liconv -lm    -liconv
+Cflags: -I${includedir}  -DYAZ_HAVE_XML2=1 -DYAZ_HAVE_XSLT=1 -DYAZ_HAVE_EXSLT=1 -I/sw/include/libxml2 -I/sw/include  

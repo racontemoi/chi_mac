@@ -1,0 +1,201 @@
+.\"     Title: yaz-icu
+.\"    Author: 
+.\" Generator: DocBook XSL Stylesheets v1.73.2 <http://docbook.sf.net/>
+.\"      Date: 06/09/2009
+.\"    Manual: 
+.\"    Source: YAZ 3.0.46
+.\"
+.TH "YAZ\-ICU" "1" "06/09/2009" "YAZ 3.0.46" ""
+.\" disable hyphenation
+.nh
+.\" disable justification (adjust text to left margin only)
+.ad l
+.SH "NAME"
+yaz-icu \- YAZ ICU utility
+.SH "SYNOPSIS"
+.HP 8
+\fByaz\-icu\fR [commands...] [\-c\ \fIconfig\fR] [\-p\ \fIopt\fR] [\-s] [\-x]
+.SH "DESCRIPTION"
+.PP
+
+\fByaz\-icu\fR
+is utility which demonstrates the ICU chain module of yaz\&. (\fIyaz/icu\&.h\fR)\&.
+.SH "OPTIONS"
+.PP
+\-c \fIconfig\fR
+.RS 4
+Specifies the file containing ICU chain configuration which is XML based\&.
+.RE
+.PP
+\-p \fItype\fR
+.RS 4
+Specifies extra information to be printed about the ICU system\&. If
+\fItype\fR
+is
+c
+then ICU converters are printed\&. If
+\fItype\fR
+is
+l
+available locales are printed\&. If
+\fItype\fR
+is
+t
+available transliterators are printed\&.
+.RE
+.PP
+\-s
+.RS 4
+Specifies that output should include sort key as well\&. Note that sort key differs between ICU versions\&.
+.RE
+.PP
+\-x
+.RS 4
+Specifies that output should be XML based rather than "text" based\&.
+.RE
+.SH "ICU CHAIN CONFIGURATION"
+.PP
+The ICU chain configuration speicifies one or more rules to convert text data into tokens\&. The configuration format is XML based\&.
+.PP
+The toplevel element must be named
+icu_chain\&. The
+icu_chain
+element has one required attribute
+locale
+which specifies the ICU locale to be used in the conversion steps\&.
+.PP
+The
+icu_chain
+element must include elements where each element specifies a conversion step\&. The conversion is performed in the order in which the conversion steps are specified\&. Each conversion element takes one attribute:
+rule
+which serves as argument to the conversion step\&.
+.PP
+The following conversion elements are available:
+.PP
+casemap
+.RS 4
+Converts case and rule specifies how:
+.PP
+l
+.RS 4
+Lowercase using ICU function u_strToLower\&.
+.RE
+.PP
+u
+.RS 4
+Upper case using ICU function u_strToUpper\&.
+.RE
+.PP
+t
+.RS 4
+To title using UCU function u_strToTitle\&.
+.RE
+.PP
+f
+.RS 4
+Fold case using ICU function u_strFoldCase\&.
+.RE
+.sp
+.RE
+.PP
+display
+.RS 4
+This is a meta step which specifies that a term/token is to be displayed\&. This term is retrieved in an application using function icu_chain_token_display (\fIyaz/icu\&.h\fR)\&.
+.RE
+.PP
+transform
+.RS 4
+Specifies an ICU transform rule using a transliterator Identifier\&. The rule attribute is the transliterator Identifier\&. See
+\fIICU Transforms\fR\&[1]
+for more information\&.
+.RE
+.PP
+transliterate
+.RS 4
+Specifies a rule\-based transliterator\&. The rule attribute is the custom transformation rule to be used\&. See
+\fIICU Transforms\fR\&[1]
+for more information\&.
+.RE
+.PP
+tokenize
+.RS 4
+Breaks / tokenizes a string into components using ICU functions ubrk_open, ubrk_setText, \&.\&. \&. The rule is one of:
+.PP
+l
+.RS 4
+Line\&. ICU: UBRK_LINE\&.
+.RE
+.PP
+s
+.RS 4
+Sentence\&. ICU: UBRK_SENTENCE\&.
+.RE
+.PP
+w
+.RS 4
+Word\&. ICU: UBRK_WORD\&.
+.RE
+.PP
+c
+.RS 4
+Character\&. ICU: UBRK_CHARACTER\&.
+.RE
+.PP
+t
+.RS 4
+Title\&. ICU: UBRK_TITLE\&.
+.RE
+.sp
+.RE
+.SH "EXAMPLES"
+.PP
+The following command analyzes text in file
+\fItext\fR
+using ICU chain configuration
+\fIchain\&.xml\fR:
+.sp
+.RS 4
+.nf
+    cat text | yaz\-icu \-c chain\&.xml
+   
+.fi
+.RE
+.sp
+The chain\&.xml might look as follows:
+.sp
+.RS 4
+.nf
+<icu_chain locale="en">
+  <transform rule="[:Control:] Any\-Remove"/>
+  <tokenize rule="w"/>
+  <transform rule="[[:WhiteSpace:][:Punctuation:]] Remove"/>
+  <transliterate rule="xy > z"/>
+  <display/>
+  <casemap rule="l"/>
+</icu_chain>
+
+   
+.fi
+.RE
+.sp
+.SH "SEE ALSO"
+.PP
+
+\fByaz\fR(7)
+.PP
+
+\fIICU Home\fR\&[2]
+.PP
+
+\fIICU Transforms\fR\&[1]
+.SH "NOTES"
+.IP " 1." 4
+ICU Transforms
+.RS 4
+\%http://www.icu-project.org/userguide/Transform.html
+.RE
+.IP " 2." 4
+ICU Home
+.RS 4
+\%http://www.icu-project.org/
+.RE

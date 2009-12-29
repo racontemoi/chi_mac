@@ -1,0 +1,490 @@
+------------------------------------------------------------
+revno: 3021 [merge]
+tags: clone-5.1.37-build
+committer: Georgi Kodinov <joro@sun.com>
+branch nick: merge-5.1-bugteam
+timestamp: Mon 2009-07-13 20:45:43 +0300
+message:
+  merge tree name change
+------------------------------------------------------------
+revno: 3020 [merge]
+committer: Georgi Kodinov <joro@sun.com>
+branch nick: merge-5.1-bugteam
+timestamp: Mon 2009-07-13 20:41:43 +0300
+message:
+  merge 5.1-main -> 5.1-bugteam
+------------------------------------------------------------
+revno: 3019 [merge]
+committer: Georgi Kodinov <joro@sun.com>
+branch nick: fix-5.1-bugteam
+timestamp: Mon 2009-07-13 14:34:23 +0300
+message:
+  merge 5.0-bugteam -> 5.1-bugteam
+------------------------------------------------------------
+revno: 3018 [merge]
+committer: Alexey Kopytov <Alexey.Kopytov@sun.com>
+branch nick: mysql-5.1-bugteam
+timestamp: Sun 2009-07-12 20:56:43 +0600
+message:
+  Automerge.
+------------------------------------------------------------
+revno: 3017
+committer: Gleb Shchepa <gshchepa@mysql.com>
+branch nick: mysql-5.1-bugteam
+timestamp: Sat 2009-07-11 23:44:29 +0500
+message:
+  Bug #41156: List of derived tables acts like a chain of
+              mutually-nested subqueries
+  
+  Queries of the form
+  
+    SELECT * FROM (SELECT 1) AS t1,
+                  (SELECT 2) AS t2,...
+                  (SELECT 32) AS t32
+  
+  caused the "Too high level of nesting for select" error
+  as if the query has a form
+  
+    SELECT * FROM (SELECT 1 FROM (SELECT 2 FROM (SELECT 3 FROM...
+  
+  
+  The table_factor parser rule has been modified to adjust
+  the LEX::nest_level variable value after every derived table.
+------------------------------------------------------------
+revno: 3016 [merge]
+committer: Staale Smedseng <staale.smedseng@sun.com>
+branch nick: 43397-51
+timestamp: Fri 2009-07-10 17:19:30 +0200
+message:
+  Merge from 5.1-bugteam
+------------------------------------------------------------
+revno: 3015
+committer: Staale Smedseng <staale.smedseng@sun.com>
+branch nick: 43397-51
+timestamp: Wed 2009-07-08 16:49:45 +0200
+message:
+  Bug #43397 mysql headers redefine pthread_mutex_init
+  unnecessarily
+        
+  The problem is that libmysqlclient.so is built with THREAD
+  undefined, while a client compiling against the same header
+  files will see THREAD as defined and definitions in
+  my_pthread.h will be included, possibly resulting in undefined
+  symbols that cannot be resolved with libmysqlclient.so.
+        
+  The suggested solution is to require that clients wanting to
+  link with libmysqlclient.so should be built with
+  MYSQL_CLIENT_NO_THREADS defined. This requires a documentation
+  change, and more details for this will be supplied if this
+  patch is approved.
+        
+  The MYSQL_CLIENT_NO_THREADS define was renamed from
+  UNDEF_THREADS_HACK, to get a more suitable (less suspicious)
+  name for the define. (The UNDEF_THREADS_HACK is retained for
+  backwards compatibility, though.)
+        
+  This patch is also in anticipation of WL#4958, which will
+  remove this problem altogether by dropping the building of
+  libmysqlclient.
+------------------------------------------------------------
+revno: 3014
+committer: Georgi Kodinov <joro@sun.com>
+branch nick: merge-5.1-bugteam
+timestamp: Wed 2009-07-08 13:12:27 +0300
+message:
+  Addendum to the fix for bug 45807 : initialize a member needed in
+  Item_field::fix_fields()
+------------------------------------------------------------
+revno: 3013
+committer: Georgi Kodinov <joro@sun.com>
+branch nick: merge-5.1-bugteam
+timestamp: Wed 2009-07-08 10:31:49 +0300
+message:
+  Bug#38998, Bug#46029, Bug#45243, Bug#46030 making tests experimental
+------------------------------------------------------------
+revno: 3012 [merge]
+committer: Georgi Kodinov <joro@sun.com>
+branch nick: merge-5.1-bugteam
+timestamp: Tue 2009-07-07 17:44:19 +0300
+message:
+  automerge
+------------------------------------------------------------
+revno: 3011
+committer: Georgi Kodinov <joro@sun.com>
+branch nick: merge-5.1-bugteam
+timestamp: Tue 2009-07-07 17:41:34 +0300
+message:
+  Bug #40796 : adding the tests to the experimental pb2 set.
+------------------------------------------------------------
+revno: 3010
+committer: Georgi Kodinov <joro@sun.com>
+branch nick: merge-5.1-bugteam
+timestamp: Tue 2009-07-07 17:18:44 +0300
+message:
+  revert of hiding of the error exposed by this suite.
+------------------------------------------------------------
+revno: 3009
+committer: Georgi Kodinov <joro@sun.com>
+branch nick: merge-5.1-bugteam
+timestamp: Tue 2009-07-07 17:15:53 +0300
+message:
+  merge of making bug 45578, 46010 and 45576 experimental in pb2.
+------------------------------------------------------------
+revno: 3008 [merge]
+committer: Georgi Kodinov <joro@sun.com>
+branch nick: merge-5.1-bugteam
+timestamp: Tue 2009-07-07 17:14:21 +0300
+message:
+  atuomerge
+------------------------------------------------------------
+revno: 3007
+committer: Georgi Kodinov <joro@sun.com>
+branch nick: merge-5.1-bugteam
+timestamp: Tue 2009-07-07 16:11:46 +0300
+message:
+  fixed compilation warnings on macosx
+------------------------------------------------------------
+revno: 3006
+committer: Georgi Kodinov <joro@sun.com>
+branch nick: merge-5.1-bugteam
+timestamp: Tue 2009-07-07 16:09:06 +0300
+message:
+  fixed a failing test ctype_gbk_binlog : Table 't2' already exists
+------------------------------------------------------------
+revno: 3005 [merge]
+committer: Georgi Kodinov <joro@sun.com>
+branch nick: merge-5.1-bugteam
+timestamp: Mon 2009-07-06 20:02:56 +0300
+message:
+  null merged the disablement : problem is not present in 5.1
+------------------------------------------------------------
+revno: 3004
+committer: Georgi Kodinov <joro@sun.com>
+branch nick: merge-5.1-bugteam
+timestamp: Mon 2009-07-06 18:17:39 +0300
+message:
+  Bug #45974: disable test case in 5.1-bugteam
+------------------------------------------------------------
+revno: 3003 [merge]
+committer: Georgi Kodinov <joro@sun.com>
+branch nick: merge-5.1-bugteam
+timestamp: Mon 2009-07-06 17:47:51 +0300
+message:
+  null-merged the test case disablement in bug 45972  to 5.1
+------------------------------------------------------------
+revno: 3002 [merge]
+committer: Georgi Kodinov <joro@sun.com>
+branch nick: merge-5.1-bugteam
+timestamp: Mon 2009-07-06 13:36:09 +0300
+message:
+  null-merged the disabled test cases.
+------------------------------------------------------------
+revno: 3001 [merge]
+committer: Georgi Kodinov <joro@sun.com>
+branch nick: merge-5.1-bugteam
+timestamp: Mon 2009-07-06 13:30:25 +0300
+message:
+  null-merge the mark of bug #38499 to big_test : it's running faster on 5.1
+------------------------------------------------------------
+revno: 3000 [merge]
+committer: Georgi Kodinov <joro@sun.com>
+branch nick: merge-5.1-bugteam
+timestamp: Mon 2009-07-06 13:07:38 +0300
+message:
+  automerge
+------------------------------------------------------------
+revno: 2999 [merge]
+committer: Georgi Kodinov <joro@sun.com>
+branch nick: merge-5.1-bugteam
+timestamp: Mon 2009-07-06 12:07:29 +0300
+message:
+  null-merged test cases disablement
+------------------------------------------------------------
+revno: 2998
+committer: Ramil Kalimullin <ramil@mysql.com>
+branch nick: mysql-5.1-bugteam
+timestamp: Mon 2009-07-06 11:55:53 +0500
+message:
+  Fix for bug#42364 reverted.
+------------------------------------------------------------
+revno: 2997 [merge]
+committer: Kristofer Pettersson <kristofer.pettersson@sun.com>
+branch nick: mysql-5.1-bugteam
+timestamp: Fri 2009-07-03 20:49:30 +0200
+message:
+  5.0-bugteam -> 5.1-bugteam
+------------------------------------------------------------
+revno: 2996 [merge]
+committer: Alexey Kopytov <Alexey.Kopytov@Sun.com>
+branch nick: mysql-5.1-bugteam
+timestamp: Fri 2009-07-03 14:43:54 +0400
+message:
+  Automerge.
+------------------------------------------------------------
+revno: 2995 [merge]
+committer: Sergey Glukhov <Sergey.Glukhov@sun.com>
+branch nick: mysql-5.1-bugteam
+timestamp: Fri 2009-07-03 13:39:22 +0500
+message:
+  5.0-bugteam->5.1-bugteam merge
+------------------------------------------------------------
+revno: 2994
+committer: Sergey Glukhov <Sergey.Glukhov@sun.com>
+branch nick: mysql-5.1-bugteam
+timestamp: Fri 2009-07-03 13:22:06 +0500
+message:
+  Bug#42364 SHOW ERRORS returns empty resultset after dropping non existent table
+  enabled message storing into error message list
+  for 'drop table' command
+------------------------------------------------------------
+revno: 2993 [merge]
+committer: Bernt M. Johnsen <bernt.johnsen@sun.com>
+branch nick: 5.1-bugteam
+timestamp: Fri 2009-07-03 10:33:34 +0200
+message:
+  automerge
+------------------------------------------------------------
+revno: 2992 [merge]
+committer: Bernt M. Johnsen <bernt.johnsen@sun.com>
+branch nick: 5.1-bugteam
+timestamp: Fri 2009-07-03 10:32:17 +0200
+message:
+  Prepare for push
+------------------------------------------------------------
+revno: 2991
+committer: V Narayanan<v.narayanan@sun.com>
+branch nick: mysql-5.1-bugteam-45793-1
+timestamp: Thu 2009-07-02 13:34:23 +0530
+message:
+  Bug#45793 macce charset causes error with IBMDB2I
+  
+  Creating an IBMDB2I table with the macce character set
+  is successful, but any attempt to insert data into the
+  table was failing.
+  
+  This was happening because the character set name "macce"
+  is not a valid iconv descriptor for IBM i PASE. This patch
+  adds an override to convertTextDesc to use the equivalent
+  valid iconv descriptor "IBM-1282" instead.
+------------------------------------------------------------
+revno: 2990 [merge]
+committer: Staale Smedseng <staale.smedseng@sun.com>
+branch nick: 45790-51
+timestamp: Wed 2009-07-01 14:32:04 +0200
+message:
+  Merge from 5.0
+------------------------------------------------------------
+revno: 2989 [merge]
+committer: Satya B <satya.bn@sun.com>
+branch nick: mysql-5.1-bugteam
+timestamp: Wed 2009-07-01 11:07:02 +0530
+message:
+  merge to 5.1-bugteam
+------------------------------------------------------------
+revno: 2988
+committer: Satya B <satya.bn@sun.com>
+branch nick: mysql-5.1-bugteam
+timestamp: Wed 2009-07-01 11:06:05 +0530
+message:
+  Fix build failure after applying Innodb snapshot 5.1-ss5282
+  
+  After applying Innodb snapshot 5.1-ss5282, build was broken
+  because of missing header file. 
+  
+  Adding the header file to Makefile.am after informing the 
+  innodb developers.
+------------------------------------------------------------
+revno: 2987 [merge]
+committer: Staale Smedseng <staale.smedseng@sun.com>
+branch nick: 43414-51
+timestamp: Mon 2009-06-29 16:00:47 +0200
+message:
+  Merge from 5.0
+------------------------------------------------------------
+revno: 2986 [merge]
+committer: Satya B <satya.bn@sun.com>
+branch nick: mysql-5.1-bugteam
+timestamp: Mon 2009-06-29 18:38:19 +0530
+message:
+  merge to mysql-5.1-bugteam branch
+------------------------------------------------------------
+revno: 2985 [merge]
+committer: Satya B <satya.bn@sun.com>
+branch nick: mysql-5.1-bugteam
+timestamp: Mon 2009-06-29 18:33:11 +0530
+message:
+  merge to mysql-5.1-bugteam
+------------------------------------------------------------
+revno: 2984 [merge]
+committer: Satya B <satya.bn@sun.com>
+branch nick: mysql-5.1-bugteam
+timestamp: Mon 2009-06-29 17:59:44 +0530
+message:
+  Null merge mysql-5.0-bugteam to mysql-5.1-bugteam
+------------------------------------------------------------
+revno: 2983 [merge]
+committer: Luis Soares <luis.soares@sun.com>
+branch nick: 5.1-bt-to-push
+timestamp: Mon 2009-06-29 12:00:58 +0100
+message:
+  merge: 5.1-bt bug branch --> 5.1-bt latest
+------------------------------------------------------------
+revno: 2982
+committer: V Narayanan<v.narayanan@sun.com>
+branch nick: mysql-5.1-bugteam-45196-1
+timestamp: Mon 2009-06-29 07:32:17 +0530
+message:
+  Bug#45196  Some collations do not sort correctly with IBMDB2I
+  
+  Some collations--including cp1250_czech_cs,latin2_czech_cs,
+  ucs2/utf8_czech_ci, ucs2/utf8_danish_ci--are not being
+  sorted correctly by the IBMDB2I storage engine. This
+  was being caused because the sort order used by DB2 is
+  incompatible with the order expected by MySQL.
+  
+  This patch removes support for the cp1250_czech_cs and
+  latin2_czech_cs collations because it has been determined
+  that the sort order used by DB2 is incompatible with the
+  order expected by MySQL. Users needing a czech collation
+  with IBMDB2I are encouraged to use a Unicode-based collation 
+  instead of these single-byte collations. This patch also
+  modifies the DB2 sort sequence used for ucs2/utf8_czech_ci
+  and ucs2/utf8_danish_ci collations to better match the
+  sorting expected by MySQL. This will only affect indexes
+  or tables that are newly created through the IBMDB2I storage
+  engine. Existing IBMDB2I tables will retain the old sort
+  sequence until recreated.
+------------------------------------------------------------
+revno: 2981 [merge]
+committer: Evgeny Potemkin <epotemkin@mysql.com>
+branch nick: mysql-5.1-bugteam
+timestamp: Fri 2009-06-26 19:59:41 +0000
+message:
+  Merged bug#45266.
+------------------------------------------------------------
+revno: 2980
+committer: Davi Arnaut <Davi.Arnaut@Sun.COM>
+branch nick: 45548-5.1
+timestamp: Thu 2009-06-25 12:25:23 -0300
+message:
+  Bug#45548: XA transaction without access to InnoDB tables crashes the server
+  
+  The problem is that the one phase commit function failed to
+  properly end a empty transaction. The solution is to ensure
+  that the transaction cleanup procedure is invoked even for
+  empty transactions.
+------------------------------------------------------------
+revno: 2979 [merge]
+committer: Alexey Kopytov <Alexey.Kopytov@Sun.com>
+branch nick: mysql-5.1-bugteam
+timestamp: Fri 2009-06-26 18:00:40 +0400
+message:
+  Automerge.
+------------------------------------------------------------
+revno: 2978 [merge]
+committer: Alexey Kopytov <Alexey.Kopytov@Sun.com>
+branch nick: mysql-5.1-bugteam
+timestamp: Fri 2009-06-26 17:59:52 +0400
+message:
+  Automerge.
+------------------------------------------------------------
+revno: 2977 [merge]
+committer: Luis Soares <luis.soares@sun.com>
+branch nick: 5.1-bt-post-push-fix
+timestamp: Fri 2009-06-26 12:18:50 +0100
+message:
+  local merge: 5.1-bt bug branch --> 5.1-bt latest
+------------------------------------------------------------
+revno: 2976 [merge]
+committer: Alexey Kopytov <Alexey.Kopytov@Sun.com>
+branch nick: mysql-5.1-bugteam
+timestamp: Fri 2009-06-26 13:32:56 +0400
+message:
+  Automerge.
+------------------------------------------------------------
+revno: 2975 [merge]
+committer: Staale Smedseng <staale.smedseng@sun.com>
+branch nick: 34002-51
+timestamp: Fri 2009-06-26 10:46:21 +0200
+message:
+  Merge from 5.1-bugteam
+------------------------------------------------------------
+revno: 2974
+committer: Staale Smedseng <staale.smedseng@sun.com>
+branch nick: 34002-51
+timestamp: Thu 2009-06-25 17:41:05 +0200
+message:
+  Bug #34002 uninitialized Rows_examined for some admin queries
+  such as quit and shutdown
+  
+  Logging to slow log can produce an undetermined value for
+  Rows_examined in special cases. In debug mode this manifests
+  itself as any of the various marker values used to mark
+  uninitialized memory on various platforms.
+  
+  If logging happens on a THD object that hasn't performed any
+  row reads (on this or any previous connections), the
+  THD::examined_row_count may be uninitialized. This patch adds
+  initialization for this attribute.
+  
+  No automated test cases are added, as for this to be
+  meaningful, we need to ensure that we're using a THD
+  fulfilling the above conditions. This is hard to do in the
+  mysql-test-run framework. The patch has been verified
+  manually, however, by restarting mysqld and running the test
+  included with the bug report.
+------------------------------------------------------------
+revno: 2973 [merge]
+committer: Bernt M. Johnsen <bernt.johnsen@sun.com>
+branch nick: 5.1-gca
+timestamp: Wed 2009-06-24 12:55:53 +0200
+message:
+  Bug#45293 Prepared on 5.1 gca branch
+------------------------------------------------------------
+revno: 2972
+committer: Andrei Elkin <aelkin@mysql.com>
+branch nick: 5.1-bt-bug38240-mi_is_zero
+timestamp: Tue 2009-06-23 12:10:04 +0300
+message:
+  Bug #38240 Crash in safe_mutex_lock () thr_mutex.c line 97 on rotate_relay_log 
+              
+  The reason for the crash was rotate_relay_log (mi=0x0) did not verify
+  the passed value of active_mi.  There are more cases where active_mi
+  is supposed to be non-zero e.g change_master(), stop_slave(), and it's
+  reasonable to protect from a similar crash all of them with common
+  fixes.
+              
+  Fixed with spliting end_slave() in slave threads release and slave
+  data clean-up parts (a new close_active_mi()). The new function is
+  invoked at the very end of close_connections() so that all users of
+  active_mi are proven to have left.
+------------------------------------------------------------
+revno: 2971 [merge]
+committer: Martin Hansson <martin.hansson@sun.com>
+branch nick: 5.1bt
+timestamp: Mon 2009-06-22 16:01:42 +0200
+message:
+  Merge
+------------------------------------------------------------
+revno: 2970 [merge]
+committer: Georgi Kodinov <joro@sun.com>
+branch nick: merge-5.1-bugteam
+timestamp: Mon 2009-06-22 15:01:16 +0300
+message:
+  automerge
+------------------------------------------------------------
+revno: 2969 [merge]
+committer: Georgi Kodinov <joro@sun.com>
+branch nick: merge-5.1-bugteam
+timestamp: Mon 2009-06-22 14:57:51 +0300
+message:
+  automerge
+------------------------------------------------------------
+revno: 2968 [merge]
+committer: Georgi Kodinov <joro@sun.com>
+branch nick: merge-5.1-bugteam
+timestamp: Mon 2009-06-22 14:53:22 +0300
+message:
+  automerge
+------------------------------------------------------------
+Use --include-merges or -n0 to see merged revisions.

@@ -1,0 +1,183 @@
+body
+{
+	margin:0px;
+}
+
+#front
+{
+	width: 160px;
+	height: 160px;
+}
+
+#back {
+	position:absolute;
+	top: 0px;
+	left: 0px;
+	display:none;
+}
+
+#background
+{
+    position:absolute;
+    top:0px;
+    left:0px;
+	width:160px;
+	height:160px;
+    z-index:-1;
+}
+
+#indicator
+{
+	position: absolute;
+	top: 16px;
+	left:70px;
+	width: 16px;
+	height:16px;
+	opacity:0.7;
+	display:none;
+}
+
+#mySqlLED
+{
+	position: absolute;
+	top: 30px;
+	left:40px;
+	width: 14px;
+	height:15px;
+}
+
+#apacheLED
+{
+	position: absolute;
+	top: 111px;
+	left: 40px;
+	width: 14px;
+	height: 15px;
+}
+
+#startServerButton, #startpageButton
+{
+	position: absolute;
+	width: 112px;
+	height: 25px;
+	color: white;
+	font-family: geneva;
+	font-weight: bold;
+	text-align: center;
+	font-size: 10px;
+	padding-top: 5px;
+	-apple-dashboard-region: dashboard-region(control rectangle 0 0 0 0);
+}
+
+#startServerButton
+{
+	top:52px;
+	left:22px;
+
+}
+
+#startpageButton
+{
+	top:78px;
+	left:22px;
+
+}
+
+.buttonNormal
+{
+	background-image: url(images/buttonNormal.png);
+	background-repeat: no-repeat;
+}
+
+.buttonPressed
+{
+	background-image: url(images/buttonPressed.png);
+	background-repeat: no-repeat;
+}
+
+.doneButtonNormal
+{
+	background-image: url(images/doneButtonNormal.png);
+	background-repeat: no-repeat;
+}
+
+.doneButtonPressed
+{
+	background-image: url(images/doneButtonPressed.png);
+	background-repeat: no-repeat;
+}
+
+.flip {
+	position: absolute;
+	top:128px;
+	left:72px;
+	width:13px;
+	height:13px;
+}
+
+#flip {
+	opacity:0;
+	background: url(images/white_i.png) no-repeat top left;
+}
+
+#fliprollie {
+	display:none;
+	opacity:0.25;
+	background: url(images/white_rollie.png) no-repeat top left;
+}
+
+#done {
+	position: absolute;
+	top: 107px;
+	left:43px;
+	width: 70px;
+	height: 25px;
+	color: white;
+	font-family: geneva;
+	font-weight: bold;
+	text-align: center;
+	font-size: 10px;
+	padding-top: 5px;
+	-apple-dashboard-region: dashboard-region(control rectangle 0 0 0 0);
+
+}
+
+#appsoluteLogo {
+	position:absolute;
+	top: 68px;
+	left: 16px;
+	width: 123px;
+	height: 29px;
+	cursor: pointer;
+}
+
+label {
+	color: white;
+	font-family: geneva;
+	font-weight: bold;
+	font-size: 12px;
+}
+
+#php4 {
+	position:absolute;
+	top: 25px;
+	left:49px;
+}
+
+#php4Label {
+	position:absolute;
+	top: 28px;
+	left:67px;
+}
+
+#php5 {
+	position:absolute;
+	top: 45px;
+	left:49px;
+}
+
+#php5Label {
+	position:absolute;
+	top: 48px;
+	left:67px;
+}

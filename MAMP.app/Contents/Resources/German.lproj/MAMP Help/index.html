@@ -1,0 +1,25 @@
+<html><head>
+		<meta http-equiv="content-type" content="text/html;charset=iso-8859-1">
+		<meta name="AppleTitle" content="MAMP Hilfe">
+		<title>MAMP HILFE</title><link href="style.css" rel="stylesheet" type="text/css" media="all"></head>
+
+
+
+	<body>
+		<div><a href="http://www.mamp.info/"><img id="logo" src="images/logo_small.gif" alt="MAMP by appsolute"></a></div>
+		<div id="textcontainer" style="clear: both;">
+			<h1>FAQ</h1>
+			<h3>Welche Versionen der enthaltenen Programme sind installiert?</h3>
+			<p><ul><li>Apache 2.0.63</li><li>MySQL 5.1.37</li><li>PHP 4.4.9 &amp; 5.2.10</li><li>APC 3.0.19 &amp; APC 3.1.2</li><li>eAccelerator 0.9.5.3</li><li>XCache 1.2.2</li><li>phpMyAdmin 2.11.9.5 &amp; phpMyAdmin 3.2.0.1</li><li>Zend Optimizer 3.3.3</li><li>SQLiteManager 1.2.0</li><li>Freetype 2.3.9</li><li>t1lib 5.1.2</li><li>curl 7.19.5</li><li>jpeg 7</li><li>libpng-1.2.38</li><li>gd 2.0.34</li><li>libxml 2.7.3</li><li>libxslt 1.1.24</li><li>gettext 0.17</li><li>libidn 1.15</li><li>iconv 1.13</li><li>mcrypt 2.5.8</li><li>YAZ 3.0.47 &amp; PHP/YAZ 1.0.14</li></ul></p>
+			<h3>Wie kann ich das Kennwort für die MySQL Datenbank ändern?</h3>
+			<p>Öffnem Sie das Terminal und schreiben folgendes:<br><br><code>/Applications/MAMP/Library/bin/mysqladmin -u root -p password &lt;NEUESKENNWORT&gt;</code><br><br>Anstelle von <code style="left: 0pt;">&lt;NEUESKENNWORT&gt;</code> müssen Sie das gewünschte Kennwort benutzen.<br>Bedenken Sie aber,
+dass dannach auch das Kennwort für phpMyAdmin und andere Skripte, welche unter MAMP laufen, geändert werden muss. Das Kennwort für phpMyAdmin kann in der Datei
+/Applications/MAMP/bin/phpMyAdmin-X.X.X/config.inc.php geändert werden.</p>
+			<h3>Wo kann ich die Ports für Apache and MySQL ändern?</h3>
+			<p>Sie können die Ports im MAMP Programm unter Einstellungen ändern:<br/><img  style="width: 28.046875em; height: 18.4375em;" src="images/ports.gif" alt="Einstellungen Fenster" /></p>
+			<h3>Wo soll ich meine PHP- und HTML-Seiten abspeichern?</h3>
+			<p>In der Standardeinstellung sollten PHP- und HTML-Seiten in den htdocs Ordner, welcher sich im Orner /Programme/MAMP befindet, kopiert werden. Dieser Ordner wird auch &quot;Document Root&quot; genannt. Den Pfad für den Dokument Root können Sie jederzeit im MAMP Programm unter Einstellungen ändern:<br/><img  style="width: 28.046875em; height: 18.4375em;" src="images/documentRoot.gif" alt="Einstellungen Fenster" /></p>
+			<h3>Warum werde ich nach meinem Kennwort gefragt, wenn MAMP gestartet oder beendet wird?</h3>
+			<p>Sie haben wahrscheinlich den Apache Port kleiner als 1024 eingestellt. Bei einem Unix System, wie Mac OSX, benötigen Sie root Rechte um IP Dienste mit Ports kleiner als 1024 zu starten.</p>
+		</div>
+	</body></html>

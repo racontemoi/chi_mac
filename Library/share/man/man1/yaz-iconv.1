@@ -1,0 +1,157 @@
+.\"     Title: yaz-iconv
+.\"    Author: 
+.\" Generator: DocBook XSL Stylesheets v1.73.2 <http://docbook.sf.net/>
+.\"      Date: 06/09/2009
+.\"    Manual: 
+.\"    Source: YAZ 3.0.46
+.\"
+.TH "YAZ\-ICONV" "1" "06/09/2009" "YAZ 3.0.46" ""
+.\" disable hyphenation
+.nh
+.\" disable justification (adjust text to left margin only)
+.ad l
+.SH "NAME"
+yaz-iconv \- YAZ Character set conversion utility
+.SH "SYNOPSIS"
+.HP 10
+\fByaz\-iconv\fR [\fB\-f\ \fR\fB\fIfrom\fR\fR] [\fB\-t\ \fR\fB\fIto\fR\fR] [\fB\-v\fR] [file...]
+.SH "DESCRIPTION"
+.PP
+
+\fByaz\-iconv\fR
+converts data in file in character set specified by
+\fIfrom\fR
+to output in character set as specified by
+\fIto\fR\&.
+.PP
+This
+\fByaz\-iconv\fR
+utility similar to the
+\fBiconv\fR
+found on many POSIX systems (Glibc, Solaris, etc)\&.
+.PP
+If no
+\fIfile\fR
+is specified,
+\fByaz\-iconv\fR
+reads from standard input\&.
+.SH "OPTIONS"
+.PP
+\-f\fIfrom\fR]
+.RS 4
+Specify the character set
+\fIfrom\fR
+of the input file\&. Should be used in conjunction with option
+\-t\&.
+.RE
+.PP
+\-t\fIto\fR]
+.RS 4
+Specify the character set
+\fIof\fR
+of the output\&. Should be used in conjunction with option
+\-f\&.
+.RE
+.PP
+\-v
+.RS 4
+Print more information about the conversion process\&.
+.RE
+.SH "ENCODINGS"
+.PP
+The yaz\-iconv command and the API as defined in
+\fIyaz/yaz\-iconv\&.h\fR
+is a wrapper for the library system call iconv\&. But YAZ\' iconv utility also implements conversions on its own\&. The table below lists characters sets (or encodings)\&. that are supported by YAZ\&. Each character set is marked with either
+\fIencode\fR
+or
+\fIdecode\fR\&. If an encoding is encode\-enabled YAZ may convert
+\fIto\fR
+to the designated encoding\&. If an encoding is decode\-enabled, YAZ may convert
+\fIfrom\fR
+the designated encoding\&.
+.PP
+marc8 (encode, decode)
+.RS 4
+The
+\fIMARC8\fR\&[1]
+encoding as defined by the Library of Congress\&. Most MARC21/USMARC records usees this encoding\&.
+.RE
+.PP
+marc8s (encode, decode)
+.RS 4
+Like MARC8 but with conversion prefers non\-combined characters in the Latin\-1 plane over combined characters\&.
+.RE
+.PP
+marc8lossy (encode)
+.RS 4
+Lossy encoding of MARC\-8\&.
+.RE
+.PP
+marc8lossless (encode)
+.RS 4
+Lossless encoding of MARC8\&.
+.RE
+.PP
+utf8 (encode, decode)
+.RS 4
+The most commonly used UNICODE encoding on the Internet\&.
+.RE
+.PP
+iso8859\-1 (encode, decode)
+.RS 4
+ISO\-8859\-1, AKA Latin\-1\&.
+.RE
+.PP
+iso5426 (decode)
+.RS 4
+ISO 5426\&. Some MARC records (UNIMARC) uses this encoding\&.
+.RE
+.PP
+iso5428:1984 (encode, decode)
+.RS 4
+ISO 5428:1984\&.
+.RE
+.PP
+advancegreek (encode, decode)
+.RS 4
+An encoding for Greek used by some vendors (Advance)\&.
+.RE
+.PP
+danmarc (decode)
+.RS 4
+
+\fIDanmarc (in danish)\fR\&[2]
+is an encoding based on UNICODE which is used for DanMARC2 records\&.
+.RE
+.SH "EXAMPLES"
+.PP
+The following command converts from ISO\-8859\-1 (Latin\-1) to UTF\-8\&.
+.sp
+.RS 4
+.nf
+    yaz\-iconv \-f ISO\-8859\-1 \-t UTF\-8 \-X <input\&.lst >output\&.lst
+   
+.fi
+.RE
+.sp
+.SH "FILES"
+.PP
+
+\fI\fIprefix\fR\fR\fI/bin/yaz\-iconv\fR
+.PP
+
+\fI\fIprefix\fR\fR\fI/include/yaz/yaz\-iconv\&.h\fR
+.SH "SEE ALSO"
+.PP
+yaz(7) iconv(1)
+.SH "NOTES"
+.IP " 1." 4
+MARC8
+.RS 4
+\%http://www.loc.gov/marc/specifications/speccharmarc8.html
+.RE
+.IP " 2." 4
+Danmarc (in danish)
+.RS 4
+\%http://www.kat-format.dk/danMARC2/Danmarc2.4.htm#felt+Indl.+4
+.RE
