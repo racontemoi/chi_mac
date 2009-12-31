@@ -25,6 +25,8 @@ user_pref("browser.startup.homepage_override.mstone", "rv:1.9.1");
 user_pref("extensions.enabledItems", "{972ce4c6-7e08-4474-a285-3208198ce6fd}:3.5");
 user_pref("extensions.lastAppVersion", "3.5");
 user_pref("intl.charsetmenu.browser.cache", "ISO-8859-1, UTF-8");
+user_pref("network.proxy.autoconfig_url", "http://127.0.0.1/MAMP/proxy.php");
+user_pref("network.proxy.type", 2);
 user_pref("network.cookie.prefsMigrated", true);
 user_pref("privacy.cpd.siteSettings", true);
 user_pref("privacy.sanitize.migrateFx3Prefs", true);
