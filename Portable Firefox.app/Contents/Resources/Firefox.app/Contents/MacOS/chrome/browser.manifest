@@ -1,0 +1,12 @@
+overlay chrome://global/content/console.xul chrome://browser/content/jsConsoleOverlay.xul
+overlay chrome://mozapps/content/extensions/extensions.xul chrome://browser/content/extensionsManagerOverlay.xul
+overlay chrome://global/content/viewPartialSource.xul chrome://browser/content/viewSourceOverlay.xul
+overlay chrome://mozapps/content/update/updates.xul chrome://browser/content/softwareUpdateOverlay.xul
+override chrome://global/content/license.html chrome://browser/content/license.html
+overlay chrome://global/content/viewSource.xul chrome://browser/content/viewSourceOverlay.xul
+style chrome://global/content/customizeToolbar.xul chrome://browser/content/browser.css
+overlay chrome://browser/content/browser.xul         chrome://browser/content/safebrowsing/report-phishing-overlay.xul
+content browser jar:browser.jar!/content/browser/ xpcnativewrappers=yes contentaccessible=yes
+style chrome://global/content/customizeToolbar.xul chrome://browser/skin/
+overlay chrome://mozapps/content/downloads/downloads.xul chrome://browser/content/downloadManagerOverlay.xul
+content branding jar:browser.jar!/content/branding/ xpcnativewrappers=yes

@@ -1,0 +1,4 @@
+skin global classic/1.0 jar:classic.jar!/skin/classic/global/
+skin browser classic/1.0 jar:classic.jar!/skin/classic/browser/
+skin communicator classic/1.0 jar:classic.jar!/skin/classic/communicator/
+skin mozapps classic/1.0 jar:classic.jar!/skin/classic/mozapps/

@@ -1,0 +1,4 @@
+CFBundleName = "Portable Firefox";
+CFBundleShortVersionString = "3.5 r4.0";
+CFBundleGetInfoString = "Portable Firefox version 3.5 r4.0 Copyright 2009 Carlo Gandolfi, Paolo Portaluri";
+NSHumanReadableCopyright = "Copyright 2009 Carlo Gandolfi, Paolo Portaluri.";
